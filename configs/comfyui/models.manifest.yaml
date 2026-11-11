@@ -1,0 +1,95 @@
+# ComfyUI model source manifest for ai-image.
+# Keep this file small and text-only. Do not commit model weights.
+#
+# Policy:
+# - Hugging Face / ModelScope remain the source of download and version truth.
+# - Tools see only a thin project model view via symlinks or explicit local dirs.
+# - Each model entry records where it came from and where ComfyUI expects to see it.
+
+models:
+  - id: sd15-v1-5-pruned-emaonly-fp16
+    kind: checkpoint
+    source:
+      provider: local-comfyui-desktop
+      path: /Users/tobe/Documents/ComfyUI/models/checkpoints/v1-5-pruned-emaonly-fp16.safetensors
+      license: unknown
+      notes: Existing model found in the local ComfyUI Desktop data directory.
+    comfyui:
+      folder: checkpoints
+      link: models/checkpoints/sd15-v1-5-pruned-emaonly-fp16.safetensors
+      target: /Users/tobe/Documents/ComfyUI/models/checkpoints/v1-5-pruned-emaonly-fp16.safetensors
+
+  - id: sdxl-base-1.0
+    kind: checkpoint
+    source:
+      provider: huggingface
+      repo: stabilityai/stable-diffusion-xl-base-1.0
+      revision: main
+      files:
+        - sd_xl_base_1.0.safetensors
+      sha256: 31e35c80fc4829d14f90153f4c74cd59c90b779f6afe05a74cd6120b893f7e5b
+      license: openrail++
+      download:
+        command: ./scripts/comfyui/download-sdxl-base.sh
+        default_provider: modelscope
+        fallback_provider: huggingface
+        modelscope_repo: AI-ModelScope/stable-diffusion-xl-base-1.0
+        modelscope_revision: v1.0.0
+        status: downloaded-via-modelscope
+    comfyui:
+      folder: checkpoints
+      link: models/checkpoints/sdxl-base-1.0.safetensors
+      target: /Users/tobe/.cache/modelscope/hub/models/AI-ModelScope/stable-diffusion-xl-base-1___0/sd_xl_base_1.0.safetensors
+
+  - id: pixel-perfect-pony-sdxl
+    kind: lora
+    source:
+      provider: huggingface
+      repo: Tech-Meld/pixel-perfect-pony-sdxl
+      revision: main
+      files:
+        - Pixel_Perfect___Pony__SDXL_-000016.safetensors
+      sha256: 5f718a3b70e52839698d461d90ff7f3c563feef3b2a88e1c74123b154f95d79b
+      license: other
+      notes:
+        - Backup pixel-art LoRA used because the first Civitai candidate returned HTTP 401 without a local token.
+        - Uses trigger word PXLART according to the model card.
+        - Commercial use is not evaluated; use for local research only unless reviewed later.
+      download:
+        command: hf download Tech-Meld/pixel-perfect-pony-sdxl Pixel_Perfect___Pony__SDXL_-000016.safetensors --local-dir /Users/tobe/.cache/huggingface/manual/Tech-Meld/pixel-perfect-pony-sdxl
+        status: downloaded
+    comfyui:
+      folder: loras
+      link: models/loras/pixel-perfect-pony-sdxl.safetensors
+      target: /Users/tobe/.cache/huggingface/manual/Tech-Meld/pixel-perfect-pony-sdxl/Pixel_Perfect___Pony__SDXL_-000016.safetensors
+
+# Example shape:
+#
+# models:
+#   - id: sdxl-base-1.0
+#     kind: checkpoint
+#     source:
+#       provider: huggingface
+#       repo: stabilityai/stable-diffusion-xl-base-1.0
+#       revision: main
+#       files:
+#         - sd_xl_base_1.0.safetensors
+#       license: openrail++
+#       download:
+#         command: hf download stabilityai/stable-diffusion-xl-base-1.0 sd_xl_base_1.0.safetensors
+#     comfyui:
+#       folder: checkpoints
+#       link: models/checkpoints/sdxl-base-1.0.safetensors
+#       target: /Users/tobe/.cache/huggingface/hub/models--stabilityai--stable-diffusion-xl-base-1.0/snapshots/<revision>/sd_xl_base_1.0.safetensors
+#
+#   - id: qwen-image
+#     kind: diffusion_model_bundle
+#     source:
+#       provider: huggingface
+#       repo: Qwen/Qwen-Image
+#       revision: main
+#       license: apache-2.0
+#       download:
+#         command: hf download Qwen/Qwen-Image
+#     comfyui:
+#       note: Follow the official ComfyUI Qwen-Image workflow for exact file placement.

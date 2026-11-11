@@ -1,0 +1,26 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+dist/
+.zed/
+
+# 模型权重放 HF / ModelScope 缓存，项目里只有软链接视图
+data/models/**
+models/**
+external/**/.venv/
+external/**/node_modules/
+
+# 生成产物按 configs + 提示词 + seed 可以重跑，不入库
+data/outputs/**
+!data/outputs/**/
+# 报告用的拼图属于结论，体积小，保留
+!data/outputs/reports/contact-sheets/*.jpg
+
+# 外部工具或临时生成的输入原图不入库，来源记在同目录 manifest.yaml
+# 公认的公开测试物料放 data/input/samples/，可以入库
+data/input/assets/**/originals/

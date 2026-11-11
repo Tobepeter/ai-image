@@ -1,0 +1,18 @@
+# ComfyUI Desktop external model config for this Mac.
+# Copy or merge into:
+#   ~/Library/Application Support/ComfyUI/extra_models_config.yaml
+#
+# The project models directory should contain short-name symlinks to
+# Hugging Face / ModelScope cache files.
+
+ai_image:
+  base_path: /Users/tobe/Desktop/work/ai/ai-image/models
+  checkpoints: checkpoints
+  diffusion_models: diffusion_models
+  vae: vae
+  text_encoders: text_encoders
+  clip: clip
+  clip_vision: clip_vision
+  loras: loras
+  controlnet: controlnet
+  upscale_models: upscale_models

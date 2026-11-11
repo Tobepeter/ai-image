@@ -1,0 +1,23 @@
+id: sdxl-basic-t2i-prompt-suite-archived
+source: built-in
+status: archived
+archived_by: configs/comfyui/params/built-in/sdxl-theme-suite.seed42.yaml
+description: 历史 flat prompt baseline，仅保留用于复查旧报告；新测试使用 sdxl-theme-suite.seed42.yaml
+workflow:
+  ui: configs/comfyui/workflows/sdxl-basic-t2i.ui.json
+  api: configs/comfyui/workflows/sdxl-basic-t2i.api.json
+model:
+  checkpoint: sdxl-base-1.0.safetensors
+prompt_suite: data/input/prompts/built-in/_archived/t2i-basic-suite-2026-05-21.yaml
+generation:
+  width: 1024
+  height: 1024
+  steps: 30
+  cfg: 7.0
+  sampler: euler
+  scheduler: normal
+  seeds: [42]
+output:
+  root: data/outputs/comfyui/built-in/sdxl-basic-t2i
+  layout: case_id-seed.png
+  report: data/reports/sdxl-built-in-suite.md

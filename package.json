@@ -1,0 +1,47 @@
+{
+  "name": "ai-image",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
+    "comfyui:run-pixel-suite": "node scripts/comfyui/run-pixel-suite.js",
+    "validate:hf-vision-models": "node scripts/assets/validate-hf-vision-models.js",
+    "sprite:postprocess": "node scripts/assets/sprite-postprocess.js",
+    "checker:postprocess": "uv run --with opencv-python --with pillow --with numpy scripts/assets/checker-bg-postprocess.py",
+    "vlm:smoke": "uv run --with torch --with torchvision --with transformers==4.52.4 --with pillow --with timm --with einops --with pyvips --with pyvips-binary --with accelerate --with qwen-vl-utils --with num2words scripts/assets/vlm-smoke-test.py",
+    "sam2:mask": "uv run --with torch --with torchvision --with transformers==4.56.2 --with pillow --with numpy scripts/assets/sam2-mask-test.py",
+    "opencv:components": "uv run --with opencv-python --with pillow --with numpy scripts/assets/opencv-components-test.py"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.6.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.14.0",
+    "next-themes": "^0.4.6",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.14.2",
+    "remark-gfm": "^4.0.1",
+    "shadcn": "^4.13.1",
+    "tailwind-merge": "^3.6.0",
+    "tw-animate-css": "^1.4.0",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4",
+    "@types/node": "^24",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.0.1",
+    "prettier": "^3",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "tailwindcss": "^4",
+    "typescript": "~6.0.2",
+    "vite": "^8.0.10"
+  }
+}

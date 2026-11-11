@@ -1,0 +1,117 @@
+# SDXL theme prompt suite.
+# Maintained by AI for broad baseline coverage.
+# Structure:
+# - 7 themes requested by the user
+# - 5 prompts per theme
+# - text-to-image only
+
+id: sdxl-theme-suite
+model_family: sdxl
+version: 2026-05-21
+default_negative: "low quality, blurry, distorted, deformed, disfigured, bad anatomy, extra limbs, extra fingers, missing fingers, watermark, text, logo, signature, jpeg artifacts"
+
+themes:
+  - id: clear-portrait
+    zh: 清晰人像
+    goal: 测试脸部结构、眼睛、皮肤质感、自然光、景深和商业摄影感
+    prompts:
+      - id: clear-portrait-window-light
+        positive: "clear natural light portrait photo of a young adult, relaxed expression, looking slightly away from camera, soft window light, realistic skin texture, sharp eyes, neutral background, shallow depth of field, 85mm lens, clean composition"
+      - id: clear-portrait-studio-softbox
+        positive: "professional studio portrait photo of a confident adult, softbox lighting, detailed eyes, natural skin tones, simple gray backdrop, subtle shadows, high detail, crisp focus, editorial photography"
+      - id: clear-portrait-golden-hour
+        positive: "outdoor golden hour portrait of a young adult, warm sunlight on face, soft background bokeh, natural expression, detailed hair strands, realistic skin texture, cinematic color grading"
+      - id: clear-portrait-black-white
+        positive: "black and white close-up portrait photo, dramatic side lighting, expressive eyes, fine facial detail, classic photography, clean background, high contrast, sharp focus"
+      - id: clear-portrait-profile
+        positive: "side profile portrait photo of a young adult near a window, calm expression, soft natural light, elegant composition, detailed hair texture, realistic skin, shallow depth of field"
+
+  - id: landscape
+    zh: 风景
+    goal: 测试自然大场景、远近层次、天空、水面、山体和氛围
+    prompts:
+      - id: landscape-alpine-lake
+        positive: "wide landscape photo of an alpine lake surrounded by snow-capped mountains, clear reflection on calm water, morning mist, pine forest foreground, dramatic sky, high detail, natural colors"
+      - id: landscape-coastal-cliff
+        positive: "cinematic coastal cliff landscape at sunset, ocean waves below, golden light, distant birds, rugged rocks, atmospheric haze, wide angle composition, photorealistic"
+      - id: landscape-forest-trail
+        positive: "peaceful forest trail after rain, mossy stones, tall trees, soft fog, sun rays through leaves, detailed natural textures, calm atmosphere, photorealistic landscape"
+      - id: landscape-desert-dunes
+        positive: "vast desert dunes under a clear starry night sky, subtle moonlight, smooth sand ripples, distant mountains, minimalist composition, high detail, cinematic landscape"
+      - id: landscape-waterfall-valley
+        positive: "lush green valley with a tall waterfall, mist rising from rocks, wildflowers in foreground, soft morning light, detailed foliage, wide landscape photography"
+
+  - id: city-night
+    zh: 城市夜景
+    goal: 测试夜景、霓虹、反射、街道透视、建筑光源和伪文字问题
+    prompts:
+      - id: city-night-rainy-alley
+        positive: "rainy city alley at night, neon lights reflecting on wet pavement, cinematic low angle composition, moody atmosphere, detailed storefronts, photorealistic urban scene"
+      - id: city-night-rooftop-skyline
+        positive: "modern city skyline at night from a rooftop, glowing windows, distant traffic trails, blue hour sky, cinematic wide shot, realistic architecture, high detail"
+      - id: city-night-subway-entrance
+        positive: "urban subway entrance at night after rain, soft neon glow, wet stairs, people silhouettes in the distance, atmospheric lighting, cinematic street photography"
+      - id: city-night-empty-street
+        positive: "empty downtown street at midnight, reflective asphalt, street lamps, glass buildings, misty air, quiet cinematic mood, wide angle urban photography"
+      - id: city-night-food-stall
+        positive: "small night market food stall in a rainy city street, warm lantern light, steam rising, neon background, wet pavement reflections, cinematic documentary photo"
+
+  - id: cartoon-anime
+    zh: 卡通动漫
+    goal: 测试非写实角色、线条、色彩、动画感和风格一致性
+    prompts:
+      - id: cartoon-anime-girl-garden
+        positive: "anime style illustration of a cheerful girl in a flower garden, bright expressive eyes, soft pastel colors, clean line art, detailed flowers, warm sunlight, charming composition"
+      - id: cartoon-anime-boy-bike
+        positive: "cartoon anime boy riding a bicycle through a quiet town street, summer afternoon, soft clouds, clean linework, colorful background, wholesome animated film style"
+      - id: cartoon-anime-cat-wizard
+        positive: "cute anime cat wizard wearing a tiny cloak and hat, holding a glowing wand, magical library background, expressive face, colorful fantasy illustration, clean line art"
+      - id: cartoon-anime-mecha-pilot
+        positive: "anime style young mecha pilot in a futuristic cockpit, glowing controls, dramatic lighting, sharp clean line art, detailed suit design, cinematic composition"
+      - id: cartoon-anime-food-cafe
+        positive: "cozy anime cafe scene with a slice of strawberry cake and tea on a wooden table, warm light, soft colors, clean detailed illustration, inviting atmosphere"
+
+  - id: pixel-art
+    zh: 像素风格
+    goal: 测试 SDXL base 对 pixel art、8-bit、16-bit、低分辨率风格的理解；严格像素格可能需要 LoRA
+    prompts:
+      - id: pixel-art-forest-cabin
+        positive: "pixel art style forest cabin, 16-bit retro game graphics, blocky low-resolution aesthetic, limited color palette, cozy warm window light, pine trees, clear readable silhouette"
+      - id: pixel-art-hero-idle
+        positive: "pixel art fantasy hero idle pose, 16-bit game sprite style, small character, sword and cape, simple readable silhouette, limited color palette, transparent-feeling plain background"
+      - id: pixel-art-city-rain
+        positive: "pixel art cyberpunk city street at night, 16-bit retro game style, neon reflections, rainy pavement, blocky pixels, limited palette, atmospheric background"
+      - id: pixel-art-treasure-chest
+        positive: "pixel art treasure chest game item, 16-bit sprite, gold trim, readable icon shape, limited color palette, crisp blocky edges, plain background"
+      - id: pixel-art-platformer-level
+        positive: "pixel art side-scrolling platformer level, grassy tiles, small bridge, blue sky, clouds, 16-bit retro game background, clean tileable visual style"
+
+  - id: game-assets
+    zh: 游戏素材
+    goal: 测试道具、图标、角色资产、等距场景和可复用素材感
+    prompts:
+      - id: game-asset-sword-icon
+        positive: "fantasy game asset icon of a silver sword with blue gem, centered composition, clean silhouette, detailed metal texture, dark neutral background, high quality game icon"
+      - id: game-asset-potion-bottle
+        positive: "game asset icon of a glowing red health potion bottle, cork stopper, glass reflections, centered object, clean silhouette, fantasy RPG inventory icon"
+      - id: game-asset-isometric-house
+        positive: "isometric fantasy game asset of a small wooden house, readable roof shape, cozy chimney, simple ground tile, colorful stylized 3D render, clean background"
+      - id: game-asset-treasure-room
+        positive: "stylized game environment asset, small treasure room with stone walls, glowing chest, torches, isometric view, readable shapes, colorful fantasy game art"
+      - id: game-asset-creature-companion
+        positive: "cute small fantasy creature companion for a game, big eyes, round body, simple readable silhouette, colorful stylized 3D character design, neutral background"
+
+  - id: poster-cover
+    zh: 海报封面
+    goal: 测试主视觉、画面层级、封面构图和图形感；不要求真实可读文字
+    prompts:
+      - id: poster-cover-sci-fi-film
+        positive: "sci-fi movie poster key visual, lone astronaut standing before a massive glowing planet, dramatic cinematic lighting, strong centered composition, high contrast, no readable text"
+      - id: poster-cover-fantasy-book
+        positive: "fantasy book cover key art, ancient castle on a misty mountain, dragon silhouette in the sky, dramatic sunrise, layered composition, painterly detail, no readable text"
+      - id: poster-cover-music-album
+        positive: "dreamy music album cover art, floating glass sphere above a calm ocean, pastel sunset, minimal composition, surreal atmosphere, clean square cover design, no readable text"
+      - id: poster-cover-travel
+        positive: "vintage travel poster style key visual of a coastal town, bold color blocks, simplified shapes, sunny sky, elegant composition, no readable text"
+      - id: poster-cover-game-launch
+        positive: "video game cover key art, heroic character silhouette facing a glowing portal, fantasy landscape background, dramatic rim light, strong foreground middle ground background layers, no readable text"

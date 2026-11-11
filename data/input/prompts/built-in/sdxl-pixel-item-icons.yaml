@@ -1,0 +1,21 @@
+id: sdxl-pixel-item-icons
+model_family: sdxl
+version: 2026-05-21
+description: Small single-asset test for pixel-art game inventory icons.
+default_negative: "realistic, photorealistic, 3d render, depth of field, blurry, smooth gradients, anti-aliased, text, logo, watermark, cropped, deformed, low quality, messy background"
+cases:
+  - id: sword
+    zh: 长剑
+    positive: "pixel art game inventory icon of a silver sword with a small blue gem, centered object, readable silhouette, 16-bit style, crisp blocky pixels, limited color palette, clean neutral background, no text, no logo, PXLART"
+  - id: health-potion
+    zh: 生命药水
+    positive: "pixel art game inventory icon of a red health potion bottle with cork stopper, centered object, readable silhouette, 16-bit style, crisp blocky pixels, limited color palette, clean neutral background, no text, no logo, PXLART"
+  - id: shield
+    zh: 盾牌
+    positive: "pixel art game inventory icon of a sturdy round shield with metal rim and simple emblem, centered object, readable silhouette, 16-bit style, crisp blocky pixels, limited color palette, clean neutral background, no text, no logo, PXLART"
+  - id: treasure-chest
+    zh: 宝箱
+    positive: "pixel art game inventory icon of a small treasure chest with gold trim, centered object, readable silhouette, 16-bit style, crisp blocky pixels, limited color palette, clean neutral background, no text, no logo, PXLART"
+  - id: key
+    zh: 钥匙
+    positive: "pixel art game inventory icon of an old golden key, centered object, readable silhouette, 16-bit style, crisp blocky pixels, limited color palette, clean neutral background, no text, no logo, PXLART"

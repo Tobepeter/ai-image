@@ -1,0 +1,23 @@
+id: solid-bg
+processor: solid-background
+engine: imagemagick
+description: Remove a near-solid sampled background, find foreground components, slice sprites, and build a simple row atlas.
+background:
+  key_color: "srgb(35,40,46)"
+  fuzz_percent: 9
+components:
+  min_area: 1000
+  max_components: 5
+  sort: left-to-right
+  padding: 8
+  grouping:
+    merge_detached: true
+    merge_min_area: 12
+    x_margin: 24
+outputs:
+  transparent: true
+  masks: true
+  debug: true
+  sprites: true
+  atlas: true
+  preview: true

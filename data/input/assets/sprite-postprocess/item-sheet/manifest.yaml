@@ -1,0 +1,21 @@
+id: item-sheet
+type: sprite-sheet
+source:
+  kind: codex-imagegen
+  note: 5 fantasy item icons in one generated sprite sheet
+inputs:
+  - id: pixel-item-sprite-sheet
+    path: originals/pixel-item-sprite-sheet.png
+    expected_objects:
+      - crystal
+      - sword
+      - potion
+      - key
+      - chest
+expected_outputs:
+  transparent: true
+  masks: true
+  debug: true
+  sprites: true
+  atlas: true
+  preview: true

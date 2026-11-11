@@ -1,0 +1,3 @@
+{
+  "note": "Placeholder UI workflow for the SDXL + pixel-art LoRA pipeline. The executable API workflow is configs/comfyui/workflows/sdxl-pixel-lora-t2i.api.json. Import/export a full UI graph from ComfyUI after the first successful run if visual editing is needed."
+}

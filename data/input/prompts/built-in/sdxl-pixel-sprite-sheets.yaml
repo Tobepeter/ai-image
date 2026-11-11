@@ -1,0 +1,15 @@
+id: sdxl-pixel-sprite-sheets
+model_family: sdxl
+version: 2026-05-21
+description: Small sheet/atlas test for pixel-art character frame layouts.
+default_negative: "realistic, photorealistic, 3d render, depth of field, blurry, smooth gradients, anti-aliased, text, logo, watermark, cropped, inconsistent character, extra limbs, deformed, messy grid, overlapping frames"
+cases:
+  - id: adventurer-idle
+    zh: 冒险者待机
+    positive: "pixel art sprite sheet of a small fantasy adventurer, 4 frames idle animation, same character, same outfit, same size cells, front view, 16-bit style, crisp blocky pixels, plain clean background, no text, no logo, PXLART"
+  - id: slime-bounce
+    zh: 史莱姆弹跳
+    positive: "pixel art sprite sheet of a cute blue slime creature, 4 frames bouncing animation, same character, same size cells, front view, 16-bit style, crisp blocky pixels, plain clean background, no text, no logo, PXLART"
+  - id: knight-walk
+    zh: 骑士行走
+    positive: "pixel art sprite sheet of a small armored knight, 4 frames walking animation, same character, same outfit, same size cells, side view, 16-bit style, crisp blocky pixels, plain clean background, no text, no logo, PXLART"

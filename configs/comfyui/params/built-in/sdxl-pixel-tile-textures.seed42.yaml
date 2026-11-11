@@ -1,0 +1,29 @@
+id: sdxl-pixel-tile-textures-seed42
+source: built-in
+status: active
+workflow:
+  api: configs/comfyui/workflows/sdxl-pixel-lora-t2i.api.json
+  ui: configs/comfyui/workflows/sdxl-pixel-lora-t2i.ui.json
+model:
+  checkpoint: sdxl-base-1.0.safetensors
+  lora: pixel-perfect-pony-sdxl.safetensors
+  lora_strength_model: 0.8
+  lora_strength_clip: 0.8
+prompt_suite: data/input/prompts/built-in/sdxl-pixel-tile-textures.yaml
+generation:
+  width: 1024
+  height: 1024
+  steps: 24
+  cfg: 6.0
+  sampler: euler
+  scheduler: normal
+  denoise: 1.0
+  batch_size: 1
+  seeds: [42]
+postprocess:
+  enabled: true
+  asset_sizes: [64, 128]
+  preview_size: 512
+output:
+  root: data/outputs/comfyui/built-in/sdxl-pixel-tile-textures
+  report: data/reports/sdxl-pixel-tile-textures.md

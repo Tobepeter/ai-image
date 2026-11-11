@@ -1,0 +1,18 @@
+id: dungeon-sheets
+type: sprite-sheet
+source:
+  kind: external-ai-tool
+  note: Dungeon themed pixel asset sheets generated outside this project
+inputs:
+  - id: dungeon01
+    path: originals/dungeon01.png
+    note: Tiles, props, traps, chests, skulls, containers, effects
+  - id: dungeon02
+    path: originals/dungeon02.png
+    note: Character animations, monsters, effects, potions, keys, gems
+expected_outputs:
+  transparent: true
+  masks: true
+  debug: true
+  sprites: true
+  preview: true

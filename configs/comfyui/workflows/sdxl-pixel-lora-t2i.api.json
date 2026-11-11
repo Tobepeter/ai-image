@@ -1,0 +1,102 @@
+{
+  "3": {
+    "class_type": "KSampler",
+    "inputs": {
+      "cfg": 6.0,
+      "denoise": 1.0,
+      "latent_image": [
+        "5",
+        0
+      ],
+      "model": [
+        "10",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "seed": 42,
+      "steps": 24
+    }
+  },
+  "4": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "sdxl-base-1.0.safetensors"
+    }
+  },
+  "5": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "batch_size": 1,
+      "height": 1024,
+      "width": 1024
+    }
+  },
+  "6": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "10",
+        1
+      ],
+      "text": "pixel art game inventory icon of a silver sword, centered object, readable silhouette, 16-bit style, crisp blocky pixels, limited color palette, clean neutral background, no text, no logo, PXLART"
+    }
+  },
+  "7": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "10",
+        1
+      ],
+      "text": "realistic, photorealistic, 3d render, depth of field, blurry, smooth gradients, anti-aliased, text, logo, watermark, cropped, inconsistent character, extra limbs, deformed"
+    }
+  },
+  "8": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "ai-image/built-in/sdxl-pixel-item-icons/raw/sword-seed42",
+      "images": [
+        "8",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "LoraLoader",
+    "inputs": {
+      "clip": [
+        "4",
+        1
+      ],
+      "lora_name": "pixel-perfect-pony-sdxl.safetensors",
+      "model": [
+        "4",
+        0
+      ],
+      "strength_clip": 0.8,
+      "strength_model": 0.8
+    }
+  }
+}

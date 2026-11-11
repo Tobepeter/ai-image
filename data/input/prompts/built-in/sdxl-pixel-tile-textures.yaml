@@ -1,0 +1,21 @@
+id: sdxl-pixel-tile-textures
+model_family: sdxl
+version: 2026-05-21
+description: Small single-tile test for pixel-art terrain/material textures.
+default_negative: "realistic, photorealistic, 3d render, depth of field, blurry, smooth gradients, anti-aliased, text, logo, watermark, perspective view, object icon, character, low quality"
+cases:
+  - id: grass
+    zh: 草地
+    positive: "pixel art seamless-looking game terrain tile of green grass, top-down view, 16-bit style, crisp blocky pixels, limited color palette, repeatable texture, clean square composition, no text, no logo, PXLART"
+  - id: stone-floor
+    zh: 石砖地面
+    positive: "pixel art seamless-looking game terrain tile of gray stone floor bricks, top-down view, 16-bit style, crisp blocky pixels, limited color palette, repeatable texture, clean square composition, no text, no logo, PXLART"
+  - id: water
+    zh: 水面
+    positive: "pixel art seamless-looking game terrain tile of blue water surface with small wave highlights, top-down view, 16-bit style, crisp blocky pixels, limited color palette, repeatable texture, clean square composition, no text, no logo, PXLART"
+  - id: dirt
+    zh: 泥土地面
+    positive: "pixel art seamless-looking game terrain tile of brown dirt ground with tiny stones, top-down view, 16-bit style, crisp blocky pixels, limited color palette, repeatable texture, clean square composition, no text, no logo, PXLART"
+  - id: dungeon-wall-floor
+    zh: 地牢墙地
+    positive: "pixel art seamless-looking dungeon wall and floor tile texture, top-down game map style, 16-bit style, crisp blocky pixels, limited color palette, repeatable texture, clean square composition, no text, no logo, PXLART"

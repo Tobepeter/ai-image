@@ -1,0 +1,155 @@
+id: hf-vision-models
+updated_at: 2026-05-22
+cache_root: /Users/tobe/.cache/huggingface/hub
+policy:
+  - Hugging Face cache is the source of local model files.
+  - Project directories should record manifests and tests, not copy model weights.
+  - Large downloads may be partial when unauthenticated HF requests stall; rerun `hf download` to resume.
+models:
+  - id: florence-2-base
+    repo: microsoft/Florence-2-base
+    kind: vision_foundation_model
+    purpose: caption, object detection, grounding, bbox-oriented structured vision probe
+    license: mit
+    status: downloaded
+    revision: 5ca5edf5bd017b9919c05d08aebef5e4c7ac3bac
+    cache_dir: /Users/tobe/.cache/huggingface/hub/models--microsoft--Florence-2-base
+    snapshot: /Users/tobe/.cache/huggingface/hub/models--microsoft--Florence-2-base/snapshots/5ca5edf5bd017b9919c05d08aebef5e4c7ac3bac
+    download:
+      command: hf download microsoft/Florence-2-base --exclude "*.bin" --max-workers 4
+      notes: Excluded pytorch_model.bin to avoid duplicate weights; safetensors is present.
+    required_files:
+      - config.json
+      - model.safetensors
+      - preprocessor_config.json
+      - processing_florence2.py
+      - tokenizer.json
+
+  - id: sam2-hiera-small
+    repo: facebook/sam2-hiera-small
+    kind: segmentation_model
+    purpose: promptable mask generation fallback for difficult sprite cutouts
+    license: apache-2.0
+    status: downloaded
+    revision: e080ada8afd19df5e165abe71b006edc7f4c3d4e
+    cache_dir: /Users/tobe/.cache/huggingface/hub/models--facebook--sam2-hiera-small
+    snapshot: /Users/tobe/.cache/huggingface/hub/models--facebook--sam2-hiera-small/snapshots/e080ada8afd19df5e165abe71b006edc7f4c3d4e
+    download:
+      command: hf download facebook/sam2-hiera-small --include "*.json" --include "*.safetensors" --include "*.yaml" --max-workers 1
+      notes: Small variant installed first because sam2-hiera-large stalled anonymously.
+    required_files:
+      - config.json
+      - model.safetensors
+      - preprocessor_config.json
+      - processor_config.json
+      - sam2_hiera_s.yaml
+
+  - id: qwen2.5-vl-3b-instruct
+    repo: Qwen/Qwen2.5-VL-3B-Instruct
+    kind: vision_language_model
+    purpose: stronger semantic understanding, JSON output, and visual localization assistance
+    license: unknown
+    status: downloaded
+    revision: 66285546d2b821cf421d4f5eb2576359d3770cd3
+    cache_dir: /Users/tobe/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-3B-Instruct
+    snapshot: /Users/tobe/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3
+    download:
+      attempted:
+        - HF_XET_HIGH_PERFORMANCE=1 hf download Qwen/Qwen2.5-VL-3B-Instruct --max-workers 2
+        - HF_HUB_DISABLE_XET=1 hf download Qwen/Qwen2.5-VL-3B-Instruct model-00001-of-00002.safetensors --max-workers 1
+        - HF_HUB_DISABLE_XET=1 hf download Qwen/Qwen2.5-VL-3B-Instruct model-00002-of-00002.safetensors --max-workers 1
+        - HF_HUB_DISABLE_XET=1 hf download Qwen/Qwen2.5-VL-3B-Instruct --exclude "*.safetensors" --exclude "*.bin" --max-workers 4
+      notes:
+        - Xet path stalled at 0B incomplete while unauthenticated.
+        - Non-Xet single-file downloads completed both safetensors shards and metadata files.
+    required_files:
+      - config.json
+      - model-00001-of-00002.safetensors
+      - model-00002-of-00002.safetensors
+      - model.safetensors.index.json
+      - preprocessor_config.json
+      - tokenizer.json
+
+  - id: moondream2
+    repo: vikhyatk/moondream2
+    kind: small_vision_language_model
+    purpose: quick sprite captioning and automatic naming
+    license: apache-2.0
+    status: downloaded
+    revision: 6b714b26eea5cbd9f31e4edb2541c170afa935ba
+    cache_dir: /Users/tobe/.cache/huggingface/hub/models--vikhyatk--moondream2
+    snapshot: /Users/tobe/.cache/huggingface/hub/models--vikhyatk--moondream2/snapshots/6b714b26eea5cbd9f31e4edb2541c170afa935ba
+    download:
+      attempted:
+        - hf download vikhyatk/moondream2
+        - HF_HUB_DISABLE_XET=1 hf download vikhyatk/moondream2 model.safetensors --max-workers 1
+        - HF_HUB_DISABLE_XET=1 hf download vikhyatk/moondream2 --exclude "*.safetensors" --exclude "*.bin" --max-workers 4
+      notes:
+        - Anonymous download stalled on model.safetensors after partial cache.
+        - Non-Xet single-file resume completed model.safetensors and metadata files.
+    required_files:
+      - config.json
+      - model.safetensors
+      - tokenizer.json
+
+  - id: moondream-starmie-v1-tokenizer
+    repo: moondream/starmie-v1
+    kind: tokenizer_dependency
+    purpose: auxiliary tokenizer dependency loaded by moondream2 remote code
+    license: unknown
+    status: downloaded
+    revision: 35192e10a54e36eabe0a7cc57a2c1aab371cafc5
+    cache_dir: /Users/tobe/.cache/huggingface/hub/models--moondream--starmie-v1
+    snapshot: /Users/tobe/.cache/huggingface/hub/models--moondream--starmie-v1/snapshots/35192e10a54e36eabe0a7cc57a2c1aab371cafc5
+    download:
+      attempted:
+        - HF_HUB_DISABLE_XET=1 hf download moondream/starmie-v1 tokenizer.json
+      notes:
+        - First Moondream2 smoke test attempted to resolve this dependency; it is now cached explicitly so offline smoke tests can run.
+    required_files:
+      - tokenizer.json
+
+  - id: smolvlm2-2.2b-instruct
+    repo: HuggingFaceTB/SmolVLM2-2.2B-Instruct
+    kind: lightweight_multimodal_vlm
+    purpose: optional image/video QA experiments
+    license: apache-2.0
+    status: downloaded
+    revision: 482adb537c021c86670beed01cd58990d01e72e4
+    cache_dir: /Users/tobe/.cache/huggingface/hub/models--HuggingFaceTB--SmolVLM2-2.2B-Instruct
+    snapshot: /Users/tobe/.cache/huggingface/hub/models--HuggingFaceTB--SmolVLM2-2.2B-Instruct/snapshots/482adb537c021c86670beed01cd58990d01e72e4
+    download:
+      attempted:
+        - HF_HUB_DISABLE_XET=1 hf download HuggingFaceTB/SmolVLM2-2.2B-Instruct model-00001-of-00002.safetensors --max-workers 1
+        - HF_HUB_DISABLE_XET=1 hf download HuggingFaceTB/SmolVLM2-2.2B-Instruct model-00002-of-00002.safetensors --max-workers 1
+        - HF_HUB_DISABLE_XET=1 hf download HuggingFaceTB/SmolVLM2-2.2B-Instruct --exclude "*.safetensors" --exclude "*.bin" --max-workers 4
+      notes:
+        - Installed as an optional VLM comparison candidate; it overlaps with Qwen2.5-VL for this project.
+    required_files:
+      - config.json
+      - model-00001-of-00002.safetensors
+      - model-00002-of-00002.safetensors
+      - model.safetensors.index.json
+      - processor_config.json
+      - tokenizer.json
+
+  - id: rembg-models
+    repo: null
+    kind: background_removal_model_set
+    purpose: rembg-managed background removal models such as u2netp and isnet-general-use
+    status: tested
+    local_cache:
+      u2netp:
+        path: /Users/tobe/.u2net/u2netp.onnx
+        size: 4.4M
+        sha256: 309c8469258dda742793dce0ebea8e6dd393174f89934733ecc8b14c76f4ddd8
+    test:
+      case_id: item-sheet
+      command: rembg i -m u2netp input.png output.alpha.png
+      output: data/outputs/assets/sprite-postprocess/item-sheet/runs/rembg/transparent/pixel-item-sprite-sheet.alpha.png
+      preview: data/outputs/assets/sprite-postprocess/item-sheet/runs/rembg/pixel-item-sprite-sheet.checker-preview.png
+      elapsed_seconds: 6.47
+    notes:
+      - rembg downloads its own models by model name when invoked; these are not all handled as normal HF repo snapshots.
+      - u2netp is installed through rembg's managed cache, not Hugging Face cache.
+      - On the generated pixel item sheet, u2netp removed the background but visibly desaturated/softened the pixel-art assets, so keep it as a fallback for difficult backgrounds rather than the primary path.

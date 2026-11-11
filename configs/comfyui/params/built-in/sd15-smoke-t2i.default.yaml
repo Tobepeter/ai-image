@@ -1,0 +1,21 @@
+id: sd15-smoke-t2i-default
+source: built-in
+workflow:
+  ui: configs/comfyui/workflows/sd15-smoke-t2i.ui.json
+  api: configs/comfyui/workflows/sd15-smoke-t2i.api.json
+model:
+  checkpoint: sd15-v1-5-pruned-emaonly-fp16.safetensors
+prompt:
+  positive: "photo of a cute fluffy kitten, bright curious eyes, sitting on a cozy windowsill, warm natural light, shallow depth of field"
+  negative: "low quality, blurry, distorted, deformed, disfigured, watermark, text, logo"
+generation:
+  width: 512
+  height: 512
+  steps: 20
+  cfg: 7.0
+  sampler: euler
+  scheduler: normal
+  seeds: [42]
+output:
+  root: data/outputs/comfyui/smoke/sd15-smoke-t2i
+  case_id: pending-smoke-test

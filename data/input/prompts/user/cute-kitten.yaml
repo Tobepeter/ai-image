@@ -1,0 +1,9 @@
+# User prompt entry.
+
+id: cute-kitten
+subject:
+  zh: 可爱的小猫
+  en: a cute kitten
+prompt:
+  positive: "a cute kitten, soft fluffy fur, bright curious eyes"
+  negative: "low quality, blurry, distorted, deformed, watermark, text, logo"

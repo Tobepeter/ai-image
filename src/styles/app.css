@@ -1,0 +1,10 @@
+/* 预留根滚动条空间，避免短页面和长页面切换时横向跳动 */
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+/* 小图放大看时保持像素边缘 */
+img[data-pixel] {
+  image-rendering: pixelated;
+}

@@ -1,0 +1,19 @@
+id: sdxl-basic-t2i-cute-kitten
+source: user
+workflow:
+  ui: configs/comfyui/workflows/sdxl-basic-t2i.ui.json
+  api: configs/comfyui/workflows/sdxl-basic-t2i.api.json
+model:
+  checkpoint: sdxl-base-1.0.safetensors
+prompt_file: data/input/prompts/user/cute-kitten.yaml
+generation:
+  width: 1024
+  height: 1024
+  steps: 30
+  cfg: 7.0
+  sampler: euler
+  scheduler: normal
+  seeds: [42, 43, 44, 45]
+output:
+  root: data/outputs/comfyui/user/sdxl-basic-t2i
+  case_id: pending-user-cute-kitten

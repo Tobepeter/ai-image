@@ -1,0 +1,30 @@
+id: sdxl-theme-suite-seed42
+source: built-in
+status: active
+description: 当前主验收用 SDXL 主题套件，按主题拆分输出目录
+workflow:
+  ui: configs/comfyui/workflows/sdxl-basic-t2i.ui.json
+  api: configs/comfyui/workflows/sdxl-basic-t2i.api.json
+model:
+  checkpoint: sdxl-base-1.0.safetensors
+prompt_suite: data/input/prompts/built-in/sdxl-theme-suite.yaml
+generation:
+  width: 1024
+  height: 1024
+  steps: 24
+  cfg: 6.5
+  sampler: euler
+  scheduler: normal
+  denoise: 1.0
+  batch_size: 1
+  seeds: [42]
+output:
+  root: data/outputs/comfyui/built-in/sdxl-theme-suite
+  layout: theme/case_id-seed.png
+  report: data/reports/sdxl-theme-suite.md
+  manifest: data/outputs/comfyui/built-in/sdxl-theme-suite/sdxl-theme-suite-seed42-2026-05-21.json
+  contact_sheet: data/reports/assets/sdxl-theme-suite-contact-sheet.jpg
+notes:
+  - "当前结构替代旧的 sdxl-basic-t2i flat prompt suite。"
+  - "旧提示词套件已归档到 data/input/prompts/built-in/_archived/。"
+  - "每个主题 5 张图，输出路径中保留 theme 目录，方便验收和继续扩 seed。"

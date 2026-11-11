@@ -1,0 +1,69 @@
+# Built-in text-to-image prompt suite.
+# Maintained by AI for quick model/workflow evaluation.
+# Prompts are adapted from common community/tutorial patterns found through Exa search.
+# They are not meant to be user creative requests.
+
+sources:
+  - name: Stable Diffusion Art - animals
+    url: https://stable-diffusion-art.com/animals/
+    notes: "Animal prompts often combine subject, scene, lighting, depth of field, and photo-quality terms"
+  - name: Stable Diffusion Art - prompt guide
+    url: https://stable-diffusion-art.com/prompt-guide/
+    notes: "Prompt anatomy: subject, medium, style, resolution/details, color, lighting"
+  - name: Segmind SDXL prompt guide
+    url: https://blog.segmind.com/prompt-guide-for-stable-diffusion-xl-crafting-textual-descriptions-for-image-generation/
+    notes: "SDXL prompt anatomy: subject, detailed imagery, environment, mood, style, execution"
+  - name: Leonardo AI image prompt guide
+    url: https://leonardo.ai/news/ai-image-prompts/
+    notes: "Use clear subject, context, and style; avoid conversational filler"
+  - name: PromptHero Stable Diffusion cat prompts
+    url: https://prompthero.com/stable-diffusion-cat-prompts
+    notes: "Community cat prompt references for animal baseline coverage"
+
+prompts:
+  - id: animal-kitten-window
+    category: animal
+    source_basis:
+      - https://stable-diffusion-art.com/animals/
+      - https://prompthero.com/stable-diffusion-cat-prompts
+    positive: "photo of a cute fluffy kitten, bright curious eyes, sitting on a cozy windowsill, warm natural light, shallow depth of field, soft pastel colors, detailed fur texture, clean centered composition"
+    negative: "low quality, blurry, distorted, deformed, disfigured, bad anatomy, extra limbs, underexposed, overexposed, watermark, text, logo"
+
+  - id: still-life-glass-apple
+    category: still-life
+    source_basis:
+      - https://leonardo.ai/news/ai-image-prompts/
+      - https://stable-diffusion-art.com/prompt-guide/
+    positive: "photorealistic still life of a transparent glass cup beside a red apple on a wooden table, soft morning light, realistic reflections, crisp material texture, clean minimalist composition"
+    negative: "low quality, blurry, distorted, deformed, noisy reflections, watermark, text, logo"
+
+  - id: city-night-neon
+    category: scene
+    source_basis:
+      - https://stable-diffusion-art.com/prompt-guide/
+      - https://blog.segmind.com/prompt-guide-for-stable-diffusion-xl-crafting-textual-descriptions-for-image-generation/
+    positive: "cinematic photo of a rainy city street at night, neon signs reflecting on wet pavement, atmospheric lighting, detailed urban environment, wide angle composition, high contrast reflections"
+    negative: "low quality, blurry, distorted, muddy details, watermark, text, logo"
+
+  - id: watercolor-cottage
+    category: illustration
+    source_basis:
+      - https://stable-diffusion-art.com/prompt-guide/
+      - https://leonardo.ai/news/ai-image-prompts/
+    positive: "watercolor illustration of a small countryside cottage surrounded by flowers, soft paper texture, warm afternoon light, gentle color palette, peaceful storybook atmosphere"
+    negative: "low quality, blurry, distorted, messy lines, muddy colors, watermark, text, logo"
+
+  - id: portrait-natural-light
+    category: portrait
+    source_basis:
+      - https://blog.segmind.com/prompt-guide-for-stable-diffusion-xl-crafting-textual-descriptions-for-image-generation/
+      - https://leonardo.ai/news/ai-image-prompts/
+    positive: "natural light portrait photo of a young adult, relaxed expression, simple neutral background, soft window light, shallow depth of field, realistic skin texture, clean composition"
+    negative: "low quality, blurry, distorted face, deformed hands, extra fingers, plastic skin, watermark, text, logo"
+
+  - id: product-minimalist-chair
+    category: product
+    source_basis:
+      - https://leonardo.ai/news/ai-image-prompts/
+    positive: "studio product photo of a modern armchair made of light oak and cream fabric, bright minimalist living room, soft daylight, clean shadows, realistic material texture, catalog composition"
+    negative: "low quality, blurry, distorted geometry, dirty fabric, watermark, text, logo"
