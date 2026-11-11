@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Gamepad2, Image, LayoutGrid, Palette, ScanEye, Scissors } from 'lucide-react'
+import { Aperture, Boxes, MessageSquareText, Tags, Gamepad2, Image, LayoutGrid, Palette, ScanEye, Scissors } from 'lucide-react'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { Separator } from '@/components/ui/separator'
 import {
@@ -16,7 +16,11 @@ import {
   SidebarRail,
   SidebarTrigger,
 } from '@/components/ui/sidebar'
+import { AppleVisionPage } from '@/pages/apple-vision'
+import { CaptionPage } from '@/pages/caption'
+import { ClassifyPage } from '@/pages/classify'
 import { CutoutPage } from '@/pages/cutout'
+import { ModelsPage } from '@/pages/models'
 import { PixelPage } from '@/pages/pixel'
 import { SlicingPage } from '@/pages/slicing'
 import { ThemesPage } from '@/pages/themes'
@@ -24,9 +28,13 @@ import { VisionPage } from '@/pages/vision'
 
 // 每页只说一件事，claim 就是那件事
 const pages = [
+  { id: 'models', label: '模型', icon: Boxes, claim: '出图靠 SDXL，分类用 SigLIP 2，一句话用 Qwen3.5-2B', page: ModelsPage },
   { id: 'themes', label: '题材', icon: Palette, claim: 'SDXL base 风景最稳，像素和文字是短板', page: ThemesPage },
   { id: 'pixel', label: '像素素材', icon: Gamepad2, claim: '道具图标能用，精灵图还不行', page: PixelPage },
   { id: 'vision', label: '识别', icon: ScanEye, claim: '本地小模型能认全，只拿来给素材起名', page: VisionPage },
+  { id: 'apple-vision', label: 'Apple Vision', icon: Aperture, claim: '每张 0.25 秒：文字图分得出、印刷字读得准，场景只认大类', page: AppleVisionPage },
+  { id: 'classify', label: '分类', icon: Tags, claim: '分类用 SigLIP 2 + 英文提示：29/30，每张 13ms', page: ClassifyPage },
+  { id: 'caption', label: '一句话描述', icon: MessageSquareText, claim: '一句话用 Qwen3.5-2B，要准换 4B，要快选 MiniCPM-V 4.7 1B', page: CaptionPage },
   { id: 'cutout', label: '去背景', icon: Scissors, claim: '像素图用纯色抠除，模型只做补救', page: CutoutPage },
   { id: 'slicing', label: '拆图集', icon: LayoutGrid, claim: '假透明的图集也能自动拆开', page: SlicingPage },
 ]

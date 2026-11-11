@@ -1,0 +1,68 @@
+{
+  "SigLIP 2": {
+    "import_s": 4.26,
+    "load_s": 1.08,
+    "first_s": 0.06,
+    "steady_ms": 15,
+    "images": 30,
+    "script_s": 5.8
+  },
+  "Chinese-CLIP": {
+    "import_s": 4.28,
+    "load_s": 0.68,
+    "first_s": 0.04,
+    "steady_ms": 14,
+    "images": 30,
+    "script_s": 5.4
+  },
+  "Qwen3.5-0.8B-4bit": {
+    "import_s": 5.71,
+    "load_s": 0.98,
+    "first_s": 0.31,
+    "steady_ms": 258,
+    "images": 30,
+    "script_s": 14.5
+  },
+  "Qwen3.5-2B-4bit": {
+    "import_s": 5.99,
+    "load_s": 1.18,
+    "first_s": 0.67,
+    "steady_ms": 568,
+    "images": 30,
+    "script_s": 24.3
+  },
+  "InternVL3_5-1B-4bit": {
+    "import_s": 6.59,
+    "load_s": 0.63,
+    "first_s": 1.35,
+    "steady_ms": 997,
+    "images": 30,
+    "script_s": 37.5
+  },
+  "MiniCPM-V-4.7-1B-4bit": {
+    "import_s": 6.14,
+    "load_s": 1.33,
+    "first_s": 0.48,
+    "steady_ms": 390,
+    "images": 30,
+    "script_s": 19.3
+  },
+  "Qwen3.5-4B-4bit": {
+    "import_s": 5.94,
+    "load_s": 1.43,
+    "first_s": 1.41,
+    "steady_ms": 1262,
+    "images": 30,
+    "script_s": 45.4,
+    "control_ms": 698
+  },
+  "Qwen3.5-2B-8bit": {
+    "import_s": 5.64,
+    "load_s": 1.27,
+    "first_s": 0.75,
+    "steady_ms": 686,
+    "images": 30,
+    "script_s": 27.5,
+    "control_ms": 698
+  }
+}

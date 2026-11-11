@@ -1,6 +1,5 @@
 import { Check, Minus, Star, X } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { verdictLabel, type Verdict } from '@/data/verdict'
 
 const styles = {
@@ -10,17 +9,15 @@ const styles = {
   weak: { icon: X, variant: 'destructive' },
 } as const
 
-// 评级图标，悬停看文字
+// 评级徽标：图标 + 中文
 export function VerdictIcon(props: { verdict: Verdict }) {
   const style = styles[props.verdict]
   const Icon = style.icon
 
   return (
-    <Tooltip>
-      <TooltipTrigger render={<Badge variant={style.variant} />}>
-        <Icon />
-      </TooltipTrigger>
-      <TooltipContent>{verdictLabel[props.verdict]}</TooltipContent>
-    </Tooltip>
+    <Badge variant={style.variant}>
+      <Icon />
+      {verdictLabel[props.verdict]}
+    </Badge>
   )
 }

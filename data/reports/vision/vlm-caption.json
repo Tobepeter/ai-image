@@ -1,0 +1,1319 @@
+{
+  "question": "用一句中文描述这张图片，不超过 30 个字。再从这些类别里选最合适的一个：古城街道、湖边风景、夜景、菜品美食、菜单价目表、酒店房间、景区导览图、车票票据、路牌标牌、游客人群。只输出 JSON：{\"desc\": \"描述\", \"category\": \"类别\"}",
+  "runs": [
+    {
+      "name": "Qwen3.5-0.8B-4bit",
+      "hits": 12,
+      "total": 30,
+      "ms": 391,
+      "load_s": 1.2,
+      "rows": [
+        {
+          "file": "food/food-01.jpg",
+          "desc": "云南风味餐馆",
+          "category": "菜品美食",
+          "hit": false,
+          "raw": "{\"desc\": \"云南风味餐馆\"}\n\"category\": \"菜品美食\""
+        },
+        {
+          "file": "food/food-02.jpg",
+          "desc": "盘中有火腿、泡菜和酱料，旁边有酒杯和餐具。",
+          "category": "",
+          "hit": false,
+          "raw": "{\"desc\": \"盘中有火腿、泡菜和酱料，旁边有酒杯和餐具。\"}"
+        },
+        {
+          "file": "food/food-03.jpg",
+          "desc": "Driscoll's 云南特产莓果",
+          "category": "菜品美食",
+          "hit": true,
+          "raw": "{\"desc\": \"Driscoll's 云南特产莓果\"}\ncategory: \"菜品美食\""
+        },
+        {
+          "file": "hotel/hotel-01.jpg",
+          "desc": "酒店房间",
+          "category": "酒店房间",
+          "hit": true,
+          "raw": "{\"desc\": \"酒店房间\", \"category\": \"酒店房间\"}"
+        },
+        {
+          "file": "hotel/hotel-02.jpg",
+          "desc": "酒店房间内景",
+          "category": "酒店房间",
+          "hit": true,
+          "raw": "{\"desc\": \"酒店房间内景\", \"category\": \"酒店房间\"}"
+        },
+        {
+          "file": "hotel/hotel-03.jpg",
+          "desc": "酒店房间",
+          "category": "酒店房间",
+          "hit": true,
+          "raw": "{\"desc\": \"酒店房间\", \"category\": \"酒店房间\"}"
+        },
+        {
+          "file": "lake/lake-01.jpg",
+          "desc": "湖上风景",
+          "category": "湖边风景",
+          "hit": true,
+          "raw": "{\"desc\": \"湖上风景\"}\ncategory: \"湖边风景\""
+        },
+        {
+          "file": "lake/lake-02.jpg",
+          "desc": "游客在湖边风景中拍照",
+          "category": "",
+          "hit": false,
+          "raw": "{\"desc\": \"游客在湖边风景中拍照\"}\n\"景区导览图\""
+        },
+        {
+          "file": "lake/lake-03.jpg",
+          "desc": "游客在湖边木栈道上散步",
+          "category": "",
+          "hit": false,
+          "raw": "{\"desc\": \"游客在湖边木栈道上散步\"}\n\"景区导览图\""
+        },
+        {
+          "file": "map/map-01.jpg",
+          "desc": "九龙瀑布群风景区观光图",
+          "category": "",
+          "hit": false,
+          "raw": "{\"desc\": \"九龙瀑布群风景区观光图\"}"
+        },
+        {
+          "file": "map/map-02.jpg",
+          "desc": "景区导览图",
+          "category": "景区导览图",
+          "hit": true,
+          "raw": "{\"desc\": \"景区导览图\"}\ncategory: \"景区导览图\""
+        },
+        {
+          "file": "map/map-03.jpg",
+          "desc": "景区导览图",
+          "category": "景区导览图",
+          "hit": true,
+          "raw": "{\"desc\": \"景区导览图\", \"category\": \"景区导览图\"}"
+        },
+        {
+          "file": "menu/menu-01.jpg",
+          "desc": "菜品美食",
+          "category": "",
+          "hit": false,
+          "raw": "{\"desc\": \"菜品美食\"}"
+        },
+        {
+          "file": "menu/menu-02.jpg",
+          "desc": "美食菜单",
+          "category": "菜品美食",
+          "hit": false,
+          "raw": "{\"desc\": \"美食菜单\"}\n\"category\": \"菜品美食\""
+        },
+        {
+          "file": "menu/menu-03.jpg",
+          "desc": "菜品美食",
+          "category": "",
+          "hit": false,
+          "raw": "{\"desc\": \"菜品美食\"}"
+        },
+        {
+          "file": "night/night-01.jpg",
+          "desc": "古色建筑与灯笼在夜色中灯火通明，远处可见新月与飞鸟，意境宁静悠远。",
+          "category": "",
+          "hit": false,
+          "raw": "{\"desc\": \"古色建筑与灯笼在夜色中灯火通明，远处可见新月与飞鸟，意境宁静悠远。\"}"
+        },
+        {
+          "file": "night/night-02.jpg",
+          "desc": "夜景中的传统建筑与大型水车",
+          "category": "景区导览图",
+          "hit": false,
+          "raw": "{\"desc\": \"夜景中的传统建筑与大型水车\", \"category\": \"景区导览图\"}"
+        },
+        {
+          "file": "night/night-03.jpg",
+          "desc": "灯火通明的古色建筑倒映在清澈的河水中，一座拱桥横跨而过，构成一幅美丽的夜景图景。",
+          "category": "",
+          "hit": false,
+          "raw": "{\"desc\": \"灯火通明的古色建筑倒映在清澈的河水中，一座拱桥横跨而过，构成一幅美丽的夜景图景。\"}"
+        },
+        {
+          "file": "old-town/old-town-01.jpg",
+          "desc": "一个穿着白色衬衫的男士正在处理一个大型烤肠，背景是挂满的烤肠和一张写有中文的菜单",
+          "category": "",
+          "hit": false,
+          "raw": "{\"desc\": \"一个穿着白色衬衫的男士正在处理一个大型烤肠，背景是挂满的烤肠和一张写有中文的菜单\"}"
+        },
+        {
+          "file": "old-town/old-town-02.jpg",
+          "desc": "游客在古色古香的建筑间漫步",
+          "category": "",
+          "hit": false,
+          "raw": "{\"desc\": \"游客在古色古香的建筑间漫步\"}\n\"景区导览图\""
+        },
+        {
+          "file": "old-town/old-town-03.jpg",
+          "desc": "保护水环境的警示牌",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "{\"desc\": \"保护水环境的警示牌\"}\n\"category\": \"路牌标牌\""
+        },
+        {
+          "file": "receipt/receipt-01.jpg",
+          "desc": "一张显示2025年8月26日17:12从平湖站到深圳站的车票，包含票价23.0元，有效期为10年。",
+          "category": "",
+          "hit": false,
+          "raw": "{\"desc\": \"一张显示2025年8月26日17:12从平湖站到深圳站的车票，包含票价23.0元，有效期为10年。\"}"
+        },
+        {
+          "file": "receipt/receipt-02.jpg",
+          "desc": "一张苏州园区站G7255到上海站的火车票，显示2019年8月11日10:28开，二等座，票价34.5元。",
+          "category": "",
+          "hit": false,
+          "raw": "{\"desc\": \"一张苏州园区站G7255到上海站的火车票，显示2019年8月11日10:28开，二等座，票价34.5元。\"}"
+        },
+        {
+          "file": "receipt/receipt-03.jpg",
+          "desc": "一张中国铁路的购票信息单和一张景区导览图，上面有日期、车次、票价等信息。",
+          "category": "车票票据",
+          "hit": true,
+          "raw": "{\"desc\": \"一张中国铁路的购票信息单和一张景区导览图，上面有日期、车次、票价等信息。\", \"category\": \"车票票据\"}"
+        },
+        {
+          "file": "sign/sign-01.jpg",
+          "desc": "东三环中路路牌，背景是现代化玻璃幕墙的高楼大厦",
+          "category": "",
+          "hit": false,
+          "raw": "{\"desc\": \"东三环中路路牌，背景是现代化玻璃幕墙的高楼大厦\"}"
+        },
+        {
+          "file": "sign/sign-02.jpg",
+          "desc": "北京路路牌",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "{\"desc\": \"北京路路牌\"}\ncategory: \"路牌标牌\""
+        },
+        {
+          "file": "sign/sign-03.jpg",
+          "desc": "路牌标牌",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "{\"desc\": \"路牌标牌\"}\ncategory: \"路牌标牌\""
+        },
+        {
+          "file": "tourists/tourists-01.jpg",
+          "desc": "游客在长城上合影",
+          "category": "景区导览图",
+          "hit": false,
+          "raw": "{\"desc\": \"游客在长城上合影\"}\ncategory: \"景区导览图\""
+        },
+        {
+          "file": "tourists/tourists-02.jpg",
+          "desc": "游客在景区岩洞前参观",
+          "category": "",
+          "hit": false,
+          "raw": "{\"desc\": \"游客在景区岩洞前参观\"}\n\"景区导览图\""
+        },
+        {
+          "file": "tourists/tourists-03.jpg",
+          "desc": "游客人群",
+          "category": "游客人群",
+          "hit": true,
+          "raw": "{\"desc\": \"游客人群\", \"category\": \"游客人群\"}"
+        }
+      ]
+    },
+    {
+      "name": "Qwen3.5-2B-4bit",
+      "hits": 29,
+      "total": 30,
+      "ms": 630,
+      "load_s": 1.2,
+      "rows": [
+        {
+          "file": "food/food-01.jpg",
+          "desc": "云南饭馆入口，红灯笼与招牌点缀，古色古香。",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "{\"desc\": \"云南饭馆入口，红灯笼与招牌点缀，古色古香。\", \"category\": \"路牌标牌\"}"
+        },
+        {
+          "file": "food/food-02.jpg",
+          "desc": "精致的日式料理摆盘，包含肉片、蔬菜与酱汁。",
+          "category": "菜品美食",
+          "hit": true,
+          "raw": "{\"desc\": \"精致的日式料理摆盘，包含肉片、蔬菜与酱汁。\", \"category\": \"菜品美食\"}"
+        },
+        {
+          "file": "food/food-03.jpg",
+          "desc": "超市货架上摆放着三盒Driscoll's品牌树莓，每盒净含量125g，产地为云南。",
+          "category": "菜品美食",
+          "hit": true,
+          "raw": "{\"desc\": \"超市货架上摆放着三盒Driscoll's品牌树莓，每盒净含量125g，产地为云南。\", \"category\": \"菜品美食\"}"
+        },
+        {
+          "file": "hotel/hotel-01.jpg",
+          "desc": "酒店房间，有床、床头柜和椅子。",
+          "category": "酒店房间",
+          "hit": true,
+          "raw": "{\"desc\": \"酒店房间，有床、床头柜和椅子。\", \"category\": \"酒店房间\"}"
+        },
+        {
+          "file": "hotel/hotel-02.jpg",
+          "desc": "酒店房间内景，浴缸与窗外卧室可见。",
+          "category": "酒店房间",
+          "hit": true,
+          "raw": "{\"desc\": \"酒店房间内景，浴缸与窗外卧室可见。\", \"category\": \"酒店房间\"}"
+        },
+        {
+          "file": "hotel/hotel-03.jpg",
+          "desc": "酒店房间，整洁舒适，配备红色台灯和床品。",
+          "category": "酒店房间",
+          "hit": true,
+          "raw": "{\"desc\": \"酒店房间，整洁舒适，配备红色台灯和床品。\", \"category\": \"酒店房间\"}"
+        },
+        {
+          "file": "lake/lake-01.jpg",
+          "desc": "湖边城市风光，远处高楼林立，近处有浮标和游鸭。",
+          "category": "湖边风景",
+          "hit": true,
+          "raw": "{\"desc\": \"湖边城市风光，远处高楼林立，近处有浮标和游鸭。\", \"category\": \"湖边风景\"}"
+        },
+        {
+          "file": "lake/lake-02.jpg",
+          "desc": "湖边风景，阳光明媚，游客在湖边散步，远处有山峦和建筑。",
+          "category": "湖边风景",
+          "hit": true,
+          "raw": "{\"desc\": \"湖边风景，阳光明媚，游客在湖边散步，远处有山峦和建筑。\", \"category\": \"湖边风景\"}"
+        },
+        {
+          "file": "lake/lake-03.jpg",
+          "desc": "湖边树林中的栈道和游客",
+          "category": "湖边风景",
+          "hit": true,
+          "raw": "{\"desc\": \"湖边树林中的栈道和游客\", \"category\": \"湖边风景\"}"
+        },
+        {
+          "file": "map/map-01.jpg",
+          "desc": "九龙瀑布群风景区导览图",
+          "category": "景区导览图",
+          "hit": true,
+          "raw": "{\"desc\": \"九龙瀑布群风景区导览图\", \"category\": \"景区导览图\"}"
+        },
+        {
+          "file": "map/map-02.jpg",
+          "desc": "昆明植物园全景导览图",
+          "category": "景区导览图",
+          "hit": true,
+          "raw": "{\"desc\": \"昆明植物园全景导览图\", \"category\": \"景区导览图\"}"
+        },
+        {
+          "file": "map/map-03.jpg",
+          "desc": "天池山花山景点导览图",
+          "category": "景区导览图",
+          "hit": true,
+          "raw": "{\"desc\": \"天池山花山景点导览图\", \"category\": \"景区导览图\"}"
+        },
+        {
+          "file": "menu/menu-01.jpg",
+          "desc": "竹鼠火锅菜单展示",
+          "category": "菜单价目表",
+          "hit": true,
+          "raw": "{\"desc\": \"竹鼠火锅菜单展示\", \"category\": \"菜单价目表\"}"
+        },
+        {
+          "file": "menu/menu-02.jpg",
+          "desc": "藏族餐厅菜单展示菜品价格",
+          "category": "菜单价目表",
+          "hit": true,
+          "raw": "{\"desc\": \"藏族餐厅菜单展示菜品价格\", \"category\": \"菜单价目表\"}"
+        },
+        {
+          "file": "menu/menu-03.jpg",
+          "desc": "展示着精美菜单的展品，包含菜品信息。",
+          "category": "菜单价目表",
+          "hit": true,
+          "raw": "{\"desc\": \"展示着精美菜单的展品，包含菜品信息。\", \"category\": \"菜单价目表\"}"
+        },
+        {
+          "file": "night/night-01.jpg",
+          "desc": "古色古香的建筑在夜色中灯火辉煌，月亮高悬，意境优美。",
+          "category": "夜景",
+          "hit": true,
+          "raw": "{\"desc\": \"古色古香的建筑在夜色中灯火辉煌，月亮高悬，意境优美。\", \"category\": \"夜景\"}"
+        },
+        {
+          "file": "night/night-02.jpg",
+          "desc": "夜晚的古城水车与古建筑，灯光璀璨。",
+          "category": "夜景",
+          "hit": true,
+          "raw": "{\"desc\": \"夜晚的古城水车与古建筑，灯光璀璨。\", \"category\": \"夜景\"}"
+        },
+        {
+          "file": "night/night-03.jpg",
+          "desc": "夜晚的古城街道，灯光璀璨，倒映在河水中。",
+          "category": "古城街道",
+          "hit": false,
+          "raw": "{\"desc\": \"夜晚的古城街道，灯光璀璨，倒映在河水中。\", \"category\": \"古城街道\"}"
+        },
+        {
+          "file": "old-town/old-town-01.jpg",
+          "desc": "挂满腊肉的老汉在摊位前忙碌，旁边有西瓜和菜单展示。",
+          "category": "菜品美食",
+          "hit": true,
+          "raw": "{\"desc\": \"挂满腊肉的老汉在摊位前忙碌，旁边有西瓜和菜单展示。\", \"category\": \"菜品美食\"}"
+        },
+        {
+          "file": "old-town/old-town-02.jpg",
+          "desc": "古色古香的街道两旁是游客，中间有黄色花丛。",
+          "category": "古城街道",
+          "hit": true,
+          "raw": "{\"desc\": \"古色古香的街道两旁是游客，中间有黄色花丛。\", \"category\": \"古城街道\"}"
+        },
+        {
+          "file": "old-town/old-town-03.jpg",
+          "desc": "木质路牌标牌，提醒保护水环境和水资源。",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "{\"desc\": \"木质路牌标牌，提醒保护水环境和水资源。\", \"category\": \"路牌标牌\"}"
+        },
+        {
+          "file": "receipt/receipt-01.jpg",
+          "desc": "一张显示平湖站到深圳站的车票，票价23元，二等座。",
+          "category": "车票票据",
+          "hit": true,
+          "raw": "{\"desc\": \"一张显示平湖站到深圳站的车票，票价23元，二等座。\", \"category\": \"车票票据\"}"
+        },
+        {
+          "file": "receipt/receipt-02.jpg",
+          "desc": "一张苏州园区站至上海站的火车票，显示2019年8月11日10:28开，二等座票价34.5元。",
+          "category": "车票票据",
+          "hit": true,
+          "raw": "{\"desc\": \"一张苏州园区站至上海站的火车票，显示2019年8月11日10:28开，二等座票价34.5元。\", \"category\": \"车票票据\"}"
+        },
+        {
+          "file": "receipt/receipt-03.jpg",
+          "desc": "两张车票票据，一张为纸质，一张为电子，显示从大兴机场站到北京西站的信息。",
+          "category": "车票票据",
+          "hit": true,
+          "raw": "{\"desc\": \"两张车票票据，一张为纸质，一张为电子，显示从大兴机场站到北京西站的信息。\", \"category\": \"车票票据\"}"
+        },
+        {
+          "file": "sign/sign-01.jpg",
+          "desc": "高楼大厦与路牌标牌",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "{\"desc\": \"高楼大厦与路牌标牌\", \"category\": \"路牌标牌\"}"
+        },
+        {
+          "file": "sign/sign-02.jpg",
+          "desc": "北京路路牌标牌",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "{\"desc\": \"北京路路牌标牌\", \"category\": \"路牌标牌\"}"
+        },
+        {
+          "file": "sign/sign-03.jpg",
+          "desc": "人民北路路牌标牌",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "{\"desc\": \"人民北路路牌标牌\", \"category\": \"路牌标牌\"}"
+        },
+        {
+          "file": "tourists/tourists-01.jpg",
+          "desc": "长城上游客合影，阳光明媚。",
+          "category": "游客人群",
+          "hit": true,
+          "raw": "{\"desc\": \"长城上游客合影，阳光明媚。\", \"category\": \"游客人群\"}"
+        },
+        {
+          "file": "tourists/tourists-02.jpg",
+          "desc": "游客在岩壁洞穴间行走，岩壁上有红色文字和雕像。",
+          "category": "游客人群",
+          "hit": true,
+          "raw": "{\"desc\": \"游客在岩壁洞穴间行走，岩壁上有红色文字和雕像。\", \"category\": \"游客人群\"}"
+        },
+        {
+          "file": "tourists/tourists-03.jpg",
+          "desc": "众多游客在长城上行走，阳光明媚。",
+          "category": "游客人群",
+          "hit": true,
+          "raw": "{\"desc\": \"众多游客在长城上行走，阳光明媚。\", \"category\": \"游客人群\"}"
+        }
+      ]
+    },
+    {
+      "name": "Qwen3.5-2B-8bit",
+      "hits": 29,
+      "total": 30,
+      "ms": 679,
+      "load_s": 1.3,
+      "rows": [
+        {
+          "file": "food/food-01.jpg",
+          "desc": "云南饭馆入口，挂红灯笼，有招牌和介绍牌",
+          "category": "景区导览图",
+          "hit": false,
+          "raw": "{\"desc\": \"云南饭馆入口，挂红灯笼，有招牌和介绍牌\", \"category\": \"景区导览图\"}"
+        },
+        {
+          "file": "food/food-02.jpg",
+          "desc": "一盘精致的日式料理，包含火腿、腌菜和酱汁，摆盘优雅。",
+          "category": "菜品美食",
+          "hit": true,
+          "raw": "{\"desc\": \"一盘精致的日式料理，包含火腿、腌菜和酱汁，摆盘优雅。\", \"category\": \"菜品美食\"}"
+        },
+        {
+          "file": "food/food-03.jpg",
+          "desc": "超市货架上摆放着三盒Driscoll's牌覆盆子，每盒净重125g，产地为云南。",
+          "category": "菜品美食",
+          "hit": true,
+          "raw": "{\"desc\": \"超市货架上摆放着三盒Driscoll's牌覆盆子，每盒净重125g，产地为云南。\", \"category\": \"菜品美食\"}"
+        },
+        {
+          "file": "hotel/hotel-01.jpg",
+          "desc": "一间布置温馨的酒店客房，有床、床头柜、椅子和镜子。",
+          "category": "酒店房间",
+          "hit": true,
+          "raw": "{\"desc\": \"一间布置温馨的酒店客房，有床、床头柜、椅子和镜子。\", \"category\": \"酒店房间\"}"
+        },
+        {
+          "file": "hotel/hotel-02.jpg",
+          "desc": "酒店浴室透过玻璃窗看到豪华客房，内有床、沙发和书桌。",
+          "category": "酒店房间",
+          "hit": true,
+          "raw": "{\"desc\": \"酒店浴室透过玻璃窗看到豪华客房，内有床、沙发和书桌。\", \"category\": \"酒店房间\"}"
+        },
+        {
+          "file": "hotel/hotel-03.jpg",
+          "desc": "一间布置整洁的酒店客房，配有大床、床头灯和窗户。",
+          "category": "酒店房间",
+          "hit": true,
+          "raw": "{\"desc\": \"一间布置整洁的酒店客房，配有大床、床头灯和窗户。\", \"category\": \"酒店房间\"}"
+        },
+        {
+          "file": "lake/lake-01.jpg",
+          "desc": "湖边有城市天际线和远山，水面上漂浮着鸭群和浮标。",
+          "category": "湖边风景",
+          "hit": true,
+          "raw": "{\"desc\": \"湖边有城市天际线和远山，水面上漂浮着鸭群和浮标。\", \"category\": \"湖边风景\"}"
+        },
+        {
+          "file": "lake/lake-02.jpg",
+          "desc": "湖边风景，人们在湖边散步，有自行车和喷泉，远处有山和建筑。",
+          "category": "湖边风景",
+          "hit": true,
+          "raw": "{\"desc\": \"湖边风景，人们在湖边散步，有自行车和喷泉，远处有山和建筑。\", \"category\": \"湖边风景\"}"
+        },
+        {
+          "file": "lake/lake-03.jpg",
+          "desc": "湖边树林中，游客在木栈道上漫步，阳光透过树叶洒下斑驳光影。",
+          "category": "湖边风景",
+          "hit": true,
+          "raw": "{\"desc\": \"湖边树林中，游客在木栈道上漫步，阳光透过树叶洒下斑驳光影。\", \"category\": \"湖边风景\"}"
+        },
+        {
+          "file": "map/map-01.jpg",
+          "desc": "九龙瀑布群风景区导览图",
+          "category": "景区导览图",
+          "hit": true,
+          "raw": "{\"desc\": \"九龙瀑布群风景区导览图\", \"category\": \"景区导览图\"}"
+        },
+        {
+          "file": "map/map-02.jpg",
+          "desc": "昆明植物园全景导览图，展示园区布局与景点分布",
+          "category": "景区导览图",
+          "hit": true,
+          "raw": "{\"desc\": \"昆明植物园全景导览图，展示园区布局与景点分布\", \"category\": \"景区导览图\"}"
+        },
+        {
+          "file": "map/map-03.jpg",
+          "desc": "天池山花山景点导览图，展示景区布局与游览路线",
+          "category": "景区导览图",
+          "hit": true,
+          "raw": "{\"desc\": \"天池山花山景点导览图，展示景区布局与游览路线\", \"category\": \"景区导览图\"}"
+        },
+        {
+          "file": "menu/menu-01.jpg",
+          "desc": "一张展示野生鳝鱼、斑鱼火锅和竹鼠菜品及其价格的菜单价目表",
+          "category": "菜单价目表",
+          "hit": true,
+          "raw": "{\"desc\": \"一张展示野生鳝鱼、斑鱼火锅和竹鼠菜品及其价格的菜单价目表\", \"category\": \"菜单价目表\"}"
+        },
+        {
+          "file": "menu/menu-02.jpg",
+          "desc": "一张印有藏文和英文的菜品菜单，列有多种美食及其价格。",
+          "category": "菜单价目表",
+          "hit": true,
+          "raw": "{\"desc\": \"一张印有藏文和英文的菜品菜单，列有多种美食及其价格。\", \"category\": \"菜单价目表\"}"
+        },
+        {
+          "file": "menu/menu-03.jpg",
+          "desc": "展示着菜单和文物的玻璃柜",
+          "category": "菜单价目表",
+          "hit": true,
+          "raw": "{\"desc\": \"展示着菜单和文物的玻璃柜\", \"category\": \"菜单价目表\"}"
+        },
+        {
+          "file": "night/night-01.jpg",
+          "desc": "夜景中古建筑屋檐下悬挂红灯笼，天空中可见弯月与星星，氛围宁静祥和。",
+          "category": "夜景",
+          "hit": true,
+          "raw": "{\"desc\": \"夜景中古建筑屋檐下悬挂红灯笼，天空中可见弯月与星星，氛围宁静祥和。\", \"category\": \"夜景\"}"
+        },
+        {
+          "file": "night/night-02.jpg",
+          "desc": "夜晚的古风建筑与大型水车，灯光璀璨，游客漫步其间。",
+          "category": "夜景",
+          "hit": true,
+          "raw": "{\"desc\": \"夜晚的古风建筑与大型水车，灯光璀璨，游客漫步其间。\", \"category\": \"夜景\"}"
+        },
+        {
+          "file": "night/night-03.jpg",
+          "desc": "夜晚的古建筑沿河而建，灯光映照水面，景色宁静优美。",
+          "category": "夜景",
+          "hit": true,
+          "raw": "{\"desc\": \"夜晚的古建筑沿河而建，灯光映照水面，景色宁静优美。\", \"category\": \"夜景\"}"
+        },
+        {
+          "file": "old-town/old-town-01.jpg",
+          "desc": "一位戴帽男子在挂满风干肉类的摊位前工作，墙上贴有菜品介绍海报。",
+          "category": "菜品美食",
+          "hit": true,
+          "raw": "{\"desc\": \"一位戴帽男子在挂满风干肉类的摊位前工作，墙上贴有菜品介绍海报。\", \"category\": \"菜品美食\"}"
+        },
+        {
+          "file": "old-town/old-town-02.jpg",
+          "desc": "游客在古色古香的街道上行走，两旁有传统建筑，中间有花坛，远处可见山坡上的房屋。",
+          "category": "古城街道",
+          "hit": true,
+          "raw": "{\"desc\": \"游客在古色古香的街道上行走，两旁有传统建筑，中间有花坛，远处可见山坡上的房屋。\", \"category\": \"古城街道\"}"
+        },
+        {
+          "file": "old-town/old-town-03.jpg",
+          "desc": "一块木质标牌，上面刻有藏文、中文和英文，呼吁保护水环境和水资源。",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"一块木质标牌，上面刻有藏文、中文和英文，呼吁保护水环境和水资源。\",\n    \"category\": \"路牌标牌\"\n}\n```"
+        },
+        {
+          "file": "receipt/receipt-01.jpg",
+          "desc": "一张显示从平湖站到深圳站的火车票，包含日期、时间、座位等信息。",
+          "category": "车票票据",
+          "hit": true,
+          "raw": "{\"desc\": \"一张显示从平湖站到深圳站的火车票，包含日期、时间、座位等信息。\", \"category\": \"车票票据\"}"
+        },
+        {
+          "file": "receipt/receipt-02.jpg",
+          "desc": "一张显示苏州园区站至上海站的火车票，日期为2019年8月11日，票价34.5元，二等座。",
+          "category": "车票票据",
+          "hit": true,
+          "raw": "{\"desc\": \"一张显示苏州园区站至上海站的火车票，日期为2019年8月11日，票价34.5元，二等座。\", \"category\": \"车票票据\"}"
+        },
+        {
+          "file": "receipt/receipt-03.jpg",
+          "desc": "一张火车票和一张电子客票，显示从大兴机场到北京的行程信息。",
+          "category": "车票票据",
+          "hit": true,
+          "raw": "{\"desc\": \"一张火车票和一张电子客票，显示从大兴机场到北京的行程信息。\", \"category\": \"车票票据\"}"
+        },
+        {
+          "file": "sign/sign-01.jpg",
+          "desc": "高楼林立的城市街景，附有东三环中路路牌。",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "{\"desc\": \"高楼林立的城市街景，附有东三环中路路牌。\", \"category\": \"路牌标牌\"}"
+        },
+        {
+          "file": "sign/sign-02.jpg",
+          "desc": "北京路路牌，显示路名及方向指示",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "{\"desc\": \"北京路路牌，显示路名及方向指示\", \"category\": \"路牌标牌\"}"
+        },
+        {
+          "file": "sign/sign-03.jpg",
+          "desc": "一个蓝色路牌指示人民北路及环市西路方向，背景为城市街道与建筑。",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "{\"desc\": \"一个蓝色路牌指示人民北路及环市西路方向，背景为城市街道与建筑。\", \"category\": \"路牌标牌\"}"
+        },
+        {
+          "file": "tourists/tourists-01.jpg",
+          "desc": "六位游客在长城上合影，背景是古老的城墙和蓝天。",
+          "category": "游客人群",
+          "hit": true,
+          "raw": "{\"desc\": \"六位游客在长城上合影，背景是古老的城墙和蓝天。\", \"category\": \"游客人群\"}"
+        },
+        {
+          "file": "tourists/tourists-02.jpg",
+          "desc": "游客在岩壁洞穴间行走，岩壁上有红色文字和雕像，周围有树木和岩石。",
+          "category": "游客人群",
+          "hit": true,
+          "raw": "{\"desc\": \"游客在岩壁洞穴间行走，岩壁上有红色文字和雕像，周围有树木和岩石。\", \"category\": \"游客人群\"}"
+        },
+        {
+          "file": "tourists/tourists-03.jpg",
+          "desc": "众多游客在长城上行走，背景是蓝天和古老的城墙。",
+          "category": "游客人群",
+          "hit": true,
+          "raw": "{\"desc\": \"众多游客在长城上行走，背景是蓝天和古老的城墙。\", \"category\": \"游客人群\"}"
+        }
+      ]
+    },
+    {
+      "name": "Qwen3.5-4B-4bit",
+      "hits": 27,
+      "total": 30,
+      "ms": 1040,
+      "load_s": 1.5,
+      "rows": [
+        {
+          "file": "food/food-01.jpg",
+          "desc": "云南饭馆的入口，门口挂着红灯笼，门口摆放着蒸笼。",
+          "category": "菜品美食",
+          "hit": false,
+          "raw": "```json\n{\n    \"desc\": \"云南饭馆的入口，门口挂着红灯笼，门口摆放着蒸笼。\",\n    \"category\": \"菜品美食\"\n}\n```"
+        },
+        {
+          "file": "food/food-02.jpg",
+          "desc": "黑色盘子上摆放着火腿和卷心菜沙拉，旁边有小碗和餐具。",
+          "category": "菜品美食",
+          "hit": true,
+          "raw": "{\n  \"desc\": \"黑色盘子上摆放着火腿和卷心菜沙拉，旁边有小碗和餐具。\",\n  \"category\": \"菜品美食\"\n}"
+        },
+        {
+          "file": "food/food-03.jpg",
+          "desc": "三盒装好的新鲜树莓水果。",
+          "category": "菜品美食",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"三盒装好的新鲜树莓水果。\",\n    \"category\": \"菜品美食\"\n}\n```"
+        },
+        {
+          "file": "hotel/hotel-01.jpg",
+          "desc": "一张酒店房间的照片，展示了一张大床和旁边的椅子。",
+          "category": "酒店房间",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"一张酒店房间的照片，展示了一张大床和旁边的椅子。\",\n    \"category\": \"酒店房间\"\n}\n```"
+        },
+        {
+          "file": "hotel/hotel-02.jpg",
+          "desc": "从浴室透过玻璃门看到的酒店房间内部。",
+          "category": "酒店房间",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"从浴室透过玻璃门看到的酒店房间内部。\",\n    \"category\": \"酒店房间\"\n}\n```"
+        },
+        {
+          "file": "hotel/hotel-03.jpg",
+          "desc": "一张酒店房间的照片，展示了一张整洁的双人床和床头灯。",
+          "category": "酒店房间",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"一张酒店房间的照片，展示了一张整洁的双人床和床头灯。\",\n    \"category\": \"酒店房间\"\n}\n```"
+        },
+        {
+          "file": "lake/lake-01.jpg",
+          "desc": "湖面上有鸭子，远处是城市建筑和山脉。",
+          "category": "湖边风景",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"湖面上有鸭子，远处是城市建筑和山脉。\",\n    \"category\": \"湖边风景\"\n}\n```"
+        },
+        {
+          "file": "lake/lake-02.jpg",
+          "desc": "湖边风景",
+          "category": "湖边风景",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"湖边风景\",\n    \"category\": \"湖边风景\"\n}\n```"
+        },
+        {
+          "file": "lake/lake-03.jpg",
+          "desc": "阳光透过树林洒在湖边的木栈道上，游客们正在漫步。",
+          "category": "湖边风景",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"阳光透过树林洒在湖边的木栈道上，游客们正在漫步。\",\n    \"category\": \"湖边风景\"\n}\n```"
+        },
+        {
+          "file": "map/map-01.jpg",
+          "desc": "九龙瀑布群风景名胜区导游图",
+          "category": "景区导览图",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"九龙瀑布群风景名胜区导游图\",\n    \"category\": \"景区导览图\"\n}\n```"
+        },
+        {
+          "file": "map/map-02.jpg",
+          "desc": "昆明植物园的全景导游图。",
+          "category": "景区导览图",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"昆明植物园的全景导游图。\",\n    \"category\": \"景区导览图\"\n}\n```"
+        },
+        {
+          "file": "map/map-03.jpg",
+          "desc": "天池山花山景区导览图",
+          "category": "景区导览图",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"天池山花山景区导览图\",\n    \"category\": \"景区导览图\"\n}\n```"
+        },
+        {
+          "file": "menu/menu-01.jpg",
+          "desc": "一张展示野生鱼和竹鼠菜品及其价格的菜单价目表。",
+          "category": "菜单价目表",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"一张展示野生鱼和竹鼠菜品及其价格的菜单价目表。\",\n    \"category\": \"菜单价目表\"\n}\n```"
+        },
+        {
+          "file": "menu/menu-02.jpg",
+          "desc": "一张包含多种菜品和价格的菜单。",
+          "category": "菜单价目表",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"一张包含多种菜品和价格的菜单。\",\n    \"category\": \"菜单价目表\"\n}\n```"
+        },
+        {
+          "file": "menu/menu-03.jpg",
+          "desc": "展示着菜单和卷轴的展品。",
+          "category": "菜单价目表",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"展示着菜单和卷轴的展品。\",\n    \"category\": \"菜单价目表\"\n}\n```"
+        },
+        {
+          "file": "night/night-01.jpg",
+          "desc": "古建筑的屋檐下挂着红灯笼，夜空中挂着一弯新月。",
+          "category": "夜景",
+          "hit": true,
+          "raw": "```json\n{\n  \"desc\": \"古建筑的屋檐下挂着红灯笼，夜空中挂着一弯新月。\",\n  \"category\": \"夜景\"\n}\n```"
+        },
+        {
+          "file": "night/night-02.jpg",
+          "desc": "夜晚古城的水车与古建筑",
+          "category": "古城街道",
+          "hit": false,
+          "raw": "```json\n{\n  \"desc\": \"夜晚古城的水车与古建筑\",\n  \"category\": \"古城街道\"\n}\n```"
+        },
+        {
+          "file": "night/night-03.jpg",
+          "desc": "夜晚灯光璀璨的古街，小桥流水，景色迷人。",
+          "category": "古城街道",
+          "hit": false,
+          "raw": "```json\n{\n    \"desc\": \"夜晚灯光璀璨的古街，小桥流水，景色迷人。\",\n    \"category\": \"古城街道\"\n}\n```"
+        },
+        {
+          "file": "old-town/old-town-01.jpg",
+          "desc": "一名男子在挂满风干火腿的摊位前工作。",
+          "category": "菜品美食",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"一名男子在挂满风干火腿的摊位前工作。\",\n    \"category\": \"菜品美食\"\n}\n```"
+        },
+        {
+          "file": "old-town/old-town-02.jpg",
+          "desc": "古色古香的街道两旁是传统建筑，许多游客在街上行走。",
+          "category": "古城街道",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"古色古香的街道两旁是传统建筑，许多游客在街上行走。\",\n    \"category\": \"古城街道\"\n}\n```"
+        },
+        {
+          "file": "old-town/old-town-03.jpg",
+          "desc": "一块木质路牌，上面写着“保护水环境 保护水资源”。",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"一块木质路牌，上面写着“保护水环境 保护水资源”。\",\n    \"category\": \"路牌标牌\"\n}\n```"
+        },
+        {
+          "file": "receipt/receipt-01.jpg",
+          "desc": "一张从平湖站到深圳站的火车票。",
+          "category": "车票票据",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"一张从平湖站到深圳站的火车票。\",\n    \"category\": \"车票票据\"\n}\n```"
+        },
+        {
+          "file": "receipt/receipt-02.jpg",
+          "desc": "一张从苏州园区到上海的火车票。",
+          "category": "车票票据",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"一张从苏州园区到上海的火车票。\",\n    \"category\": \"车票票据\"\n}\n```"
+        },
+        {
+          "file": "receipt/receipt-03.jpg",
+          "desc": "一张中国铁路的购票信息单和车票。",
+          "category": "车票票据",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"一张中国铁路的购票信息单和车票。\",\n    \"category\": \"车票票据\"\n}\n```"
+        },
+        {
+          "file": "sign/sign-01.jpg",
+          "desc": "高楼林立的城市街道，路牌显示东三环中路。",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"高楼林立的城市街道，路牌显示东三环中路。\",\n    \"category\": \"路牌标牌\"\n}\n```"
+        },
+        {
+          "file": "sign/sign-02.jpg",
+          "desc": "一个蓝色的路牌，上面写着北京路。",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"一个蓝色的路牌，上面写着北京路。\",\n    \"category\": \"路牌标牌\"\n}\n```"
+        },
+        {
+          "file": "sign/sign-03.jpg",
+          "desc": "一个显示着“人民北路”和“环市西路”的路牌标牌。",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"一个显示着“人民北路”和“环市西路”的路牌标牌。\",\n    \"category\": \"路牌标牌\"\n}\n```"
+        },
+        {
+          "file": "tourists/tourists-01.jpg",
+          "desc": "一群游客在长城上合影。",
+          "category": "游客人群",
+          "hit": true,
+          "raw": "```json\n{\n    \"desc\": \"一群游客在长城上合影。\",\n    \"category\": \"游客人群\"\n}\n```"
+        },
+        {
+          "file": "tourists/tourists-02.jpg",
+          "desc": "游客在刻有佛像的岩壁前参观游览。",
+          "category": "游客人群",
+          "hit": true,
+          "raw": "{\n  \"desc\": \"游客在刻有佛像的岩壁前参观游览。\",\n  \"category\": \"游客人群\"\n}"
+        },
+        {
+          "file": "tourists/tourists-03.jpg",
+          "desc": "长城上拥挤的游客人群",
+          "category": "游客人群",
+          "hit": true,
+          "raw": "{\"desc\": \"长城上拥挤的游客人群\", \"category\": \"游客人群\"}"
+        }
+      ]
+    },
+    {
+      "name": "InternVL3_5-1B-4bit",
+      "hits": 25,
+      "total": 30,
+      "ms": 989,
+      "load_s": 0.5,
+      "rows": [
+        {
+          "file": "food/food-01.jpg",
+          "desc": "云南饭店入口，展示汽锅鸡和传统氛围",
+          "category": "菜品美食",
+          "hit": false,
+          "raw": "```json\n{\"desc\": \"云南饭店入口，展示汽锅鸡和传统氛围\", \"category\": \"菜品美食\"}\n```"
+        },
+        {
+          "file": "food/food-02.jpg",
+          "desc": "一盘美食，包含腌制肉片和蔬菜，旁边有酱汁和酒杯",
+          "category": "菜品美食",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"一盘美食，包含腌制肉片和蔬菜，旁边有酱汁和酒杯\", \"category\": \"菜品美食\"}\n```"
+        },
+        {
+          "file": "food/food-03.jpg",
+          "desc": "展示Driscoll's草莓产品",
+          "category": "菜品美食",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"展示Driscoll's草莓产品\", \"category\": \"菜品美食\"}\n```"
+        },
+        {
+          "file": "hotel/hotel-01.jpg",
+          "desc": "一间酒店房间",
+          "category": "酒店房间",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"一间酒店房间\", \"category\": \"酒店房间\"}\n```"
+        },
+        {
+          "file": "hotel/hotel-02.jpg",
+          "desc": "酒店房间内的一张大床和浴室设施",
+          "category": "酒店房间",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"酒店房间内的一张大床和浴室设施\", \"category\": \"酒店房间\"}\n```"
+        },
+        {
+          "file": "hotel/hotel-03.jpg",
+          "desc": "整洁的酒店房间",
+          "category": "酒店房间",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"整洁的酒店房间\", \"category\": \"酒店房间\"}\n```"
+        },
+        {
+          "file": "lake/lake-01.jpg",
+          "desc": "城市海滨风光",
+          "category": "湖边风景",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"城市海滨风光\", \"category\": \"湖边风景\"}\n```"
+        },
+        {
+          "file": "lake/lake-02.jpg",
+          "desc": "湖边风景",
+          "category": "湖边风景",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"湖边风景\", \"category\": \"湖边风景\"}\n```"
+        },
+        {
+          "file": "lake/lake-03.jpg",
+          "desc": "湖边风景",
+          "category": "湖边风景",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"湖边风景\", \"category\": \"湖边风景\"}\n```"
+        },
+        {
+          "file": "map/map-01.jpg",
+          "desc": "九龙瀑布群风景名胜区导览图",
+          "category": "景区导览图",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"九龙瀑布群风景名胜区导览图\", \"category\": \"景区导览图\"}\n```"
+        },
+        {
+          "file": "map/map-02.jpg",
+          "desc": "昆明植物园全景导览图",
+          "category": "景区导览图",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"昆明植物园全景导览图\", \"category\": \"景区导览图\"}\n```"
+        },
+        {
+          "file": "map/map-03.jpg",
+          "desc": "天池山花山景点导览图",
+          "category": "景区导览图",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"天池山花山景点导览图\", \"category\": \"景区导览图\"}\n```"
+        },
+        {
+          "file": "menu/menu-01.jpg",
+          "desc": "图片展示了几种鱼类和竹鼠的菜单信息",
+          "category": "菜单价目表",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"图片展示了几种鱼类和竹鼠的菜单信息\", \"category\": \"菜单价目表\"}\n```"
+        },
+        {
+          "file": "menu/menu-02.jpg",
+          "desc": "菜单价目表",
+          "category": "菜单价目表",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"菜单价目表\", \"category\": \"菜单价目表\"}\n```"
+        },
+        {
+          "file": "menu/menu-03.jpg",
+          "desc": "展示菜单和酒类信息",
+          "category": "菜单价目表",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"展示菜单和酒类信息\", \"category\": \"菜单价目表\"}\n```"
+        },
+        {
+          "file": "night/night-01.jpg",
+          "desc": "夜景，传统灯笼",
+          "category": "夜景",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"夜景，传统灯笼\", \"category\": \"夜景\"}\n```"
+        },
+        {
+          "file": "night/night-02.jpg",
+          "desc": "夜晚的古建筑和水车景观",
+          "category": "夜景",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"夜晚的古建筑和水车景观\", \"category\": \"夜景\"}\n```"
+        },
+        {
+          "file": "night/night-03.jpg",
+          "desc": "夜晚古城街道",
+          "category": "古城街道",
+          "hit": false,
+          "raw": "```json\n{\"desc\": \"夜晚古城街道\", \"category\": \"古城街道\"}\n```"
+        },
+        {
+          "file": "old-town/old-town-01.jpg",
+          "desc": "一位男子在处理挂在墙上的整只猪",
+          "category": "菜品美食",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"一位男子在处理挂在墙上的整只猪\", \"category\": \"菜品美食\"}\n```"
+        },
+        {
+          "file": "old-town/old-town-02.jpg",
+          "desc": "古城街道，游客聚集",
+          "category": "古城街道",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"古城街道，游客聚集\", \"category\": \"古城街道\"}\n```"
+        },
+        {
+          "file": "old-town/old-town-03.jpg",
+          "desc": "木质路牌，宣传保护水环境和水资源",
+          "category": "景区导览图",
+          "hit": false,
+          "raw": "```json\n{\"desc\": \"木质路牌，宣传保护水环境和水资源\", \"category\": \"景区导览图\"}\n```"
+        },
+        {
+          "file": "receipt/receipt-01.jpg",
+          "desc": "这张图片显示的是车票信息，包括出发站、到达站、日期、时间、票价等信息。",
+          "category": "车票票据",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"这张图片显示的是车票信息，包括出发站、到达站、日期、时间、票价等信息。\", \"category\": \"车票票据\"}\n```"
+        },
+        {
+          "file": "receipt/receipt-02.jpg",
+          "desc": "这张图片显示的是苏州园区站到上海站的车票信息",
+          "category": "车票票据",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"这张图片显示的是苏州园区站到上海站的车票信息\", \"category\": \"车票票据\"}\n```"
+        },
+        {
+          "file": "receipt/receipt-03.jpg",
+          "desc": "车票信息单",
+          "category": "车票票据",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"车票信息单\", \"category\": \"车票票据\"}\n```"
+        },
+        {
+          "file": "sign/sign-01.jpg",
+          "desc": "城市道路，显示东三环中路",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"城市道路，显示东三环中路\", \"category\": \"路牌标牌\"}\n```"
+        },
+        {
+          "file": "sign/sign-02.jpg",
+          "desc": "北京路路牌",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"北京路路牌\", \"category\": \"路牌标牌\"}\n```"
+        },
+        {
+          "file": "sign/sign-03.jpg",
+          "desc": "显示人民北路与环市西路的路牌，时间2024年6月24日。",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"显示人民北路与环市西路的路牌，时间2024年6月24日。\", \"category\": \"路牌标牌\"}\n```"
+        },
+        {
+          "file": "tourists/tourists-01.jpg",
+          "desc": "五人站在古城街道拍照",
+          "category": "古城街道",
+          "hit": false,
+          "raw": "```json\n{\"desc\": \"五人站在古城街道拍照\", \"category\": \"古城街道\"}\n```"
+        },
+        {
+          "file": "tourists/tourists-02.jpg",
+          "desc": "游客参观洞穴，背景有文字说明",
+          "category": "景区导览图",
+          "hit": false,
+          "raw": "```json\n{\"desc\": \"游客参观洞穴，背景有文字说明\", \"category\": \"景区导览图\"}\n```"
+        },
+        {
+          "file": "tourists/tourists-03.jpg",
+          "desc": "游客排队登上古城墙",
+          "category": "游客人群",
+          "hit": true,
+          "raw": "```json\n{\"desc\": \"游客排队登上古城墙\", \"category\": \"游客人群\"}\n```"
+        }
+      ]
+    },
+    {
+      "name": "MiniCPM-V-4.7-1B-4bit",
+      "hits": 28,
+      "total": 30,
+      "ms": 444,
+      "load_s": 1.4,
+      "rows": [
+        {
+          "file": "food/food-01.jpg",
+          "desc": "古朴餐厅入口，装饰有红灯笼与绿植",
+          "category": "古城街道",
+          "hit": true,
+          "raw": "{\"desc\": \"古朴餐厅入口，装饰有红灯笼与绿植\", \"category\": \"古城街道\"}"
+        },
+        {
+          "file": "food/food-02.jpg",
+          "desc": "精致菜品摆盘",
+          "category": "菜品美食",
+          "hit": true,
+          "raw": "{\"desc\": \"精致菜品摆盘\", \"category\": \"菜品美食\"}"
+        },
+        {
+          "file": "food/food-03.jpg",
+          "desc": "新鲜覆盆子整齐摆放",
+          "category": "菜品美食",
+          "hit": true,
+          "raw": "{\"desc\": \"新鲜覆盆子整齐摆放\", \"category\": \"菜品美食\"}"
+        },
+        {
+          "file": "hotel/hotel-01.jpg",
+          "desc": "整洁的酒店房间",
+          "category": "酒店房间",
+          "hit": true,
+          "raw": "{\"desc\": \"整洁的酒店房间\", \"category\": \"酒店房间\"}"
+        },
+        {
+          "file": "hotel/hotel-02.jpg",
+          "desc": "浴室镜中反射卧室与浴缸",
+          "category": "酒店房间",
+          "hit": true,
+          "raw": "{\"desc\": \"浴室镜中反射卧室与浴缸\", \"category\": \"酒店房间\"}"
+        },
+        {
+          "file": "hotel/hotel-03.jpg",
+          "desc": "整洁的现代化酒店床铺",
+          "category": "酒店房间",
+          "hit": true,
+          "raw": "{\"desc\": \"整洁的现代化酒店床铺\", \"category\": \"酒店房间\"}"
+        },
+        {
+          "file": "lake/lake-01.jpg",
+          "desc": "宁静湖景与远山城市",
+          "category": "湖边风景",
+          "hit": true,
+          "raw": "{\"desc\": \"宁静湖景与远山城市\", \"category\": \"湖边风景\"}"
+        },
+        {
+          "file": "lake/lake-02.jpg",
+          "desc": "湖边喷泉与行人",
+          "category": "湖边风景",
+          "hit": true,
+          "raw": "{\"desc\": \"湖边喷泉与行人\", \"category\": \"湖边风景\"}"
+        },
+        {
+          "file": "lake/lake-03.jpg",
+          "desc": "湖边树林中游客休憩",
+          "category": "湖边风景",
+          "hit": true,
+          "raw": "{\"desc\": \"湖边树林中游客休憩\", \"category\": \"湖边风景\"}"
+        },
+        {
+          "file": "map/map-01.jpg",
+          "desc": "九龙瀑布景区导览图",
+          "category": "景区导览图",
+          "hit": true,
+          "raw": "{\"desc\": \"九龙瀑布景区导览图\", \"category\": \"景区导览图\"}"
+        },
+        {
+          "file": "map/map-02.jpg",
+          "desc": "昆明植物园全景导览图",
+          "category": "景区导览图",
+          "hit": true,
+          "raw": "{\"desc\": \"昆明植物园全景导览图\", \"category\": \"景区导览图\"}"
+        },
+        {
+          "file": "map/map-03.jpg",
+          "desc": "天池山花山景点导览图",
+          "category": "景区导览图",
+          "hit": true,
+          "raw": "{\"desc\": \"天池山花山景点导览图\", \"category\": \"景区导览图\"}"
+        },
+        {
+          "file": "menu/menu-01.jpg",
+          "desc": "菜品美食与菜单价目表",
+          "category": "菜品美食",
+          "hit": false,
+          "raw": "{\"desc\": \"菜品美食与菜单价目表\", \"category\": \"菜品美食\"}"
+        },
+        {
+          "file": "menu/menu-02.jpg",
+          "desc": "菜单展示菜品与价格",
+          "category": "菜单价目表",
+          "hit": true,
+          "raw": "{\"desc\": \"菜单展示菜品与价格\", \"category\": \"菜单价目表\"}"
+        },
+        {
+          "file": "menu/menu-03.jpg",
+          "desc": "精美菜单与卷轴展示",
+          "category": "菜单价目表",
+          "hit": true,
+          "raw": "{\"desc\": \"精美菜单与卷轴展示\", \"category\": \"菜单价目表\"}"
+        },
+        {
+          "file": "night/night-01.jpg",
+          "desc": "红灯笼在夜空中映衬月影",
+          "category": "夜景",
+          "hit": true,
+          "raw": "{\"desc\": \"红灯笼在夜空中映衬月影\", \"category\": \"夜景\"}"
+        },
+        {
+          "file": "night/night-02.jpg",
+          "desc": "水车在夜景中旋转",
+          "category": "夜景",
+          "hit": true,
+          "raw": "{\"desc\": \"水车在夜景中旋转\", \"category\": \"夜景\"}"
+        },
+        {
+          "file": "night/night-03.jpg",
+          "desc": "璀璨的古城夜景",
+          "category": "夜景",
+          "hit": true,
+          "raw": "{\"desc\": \"璀璨的古城夜景\", \"category\": \"夜景\"}"
+        },
+        {
+          "file": "old-town/old-town-01.jpg",
+          "desc": "男子持干肉在肉铺工作",
+          "category": "菜品美食",
+          "hit": true,
+          "raw": "{\"desc\": \"男子持干肉在肉铺工作\", \"category\": \"菜品美食\"}"
+        },
+        {
+          "file": "old-town/old-town-02.jpg",
+          "desc": "游客在古色古香的街道中漫步",
+          "category": "游客人群",
+          "hit": true,
+          "raw": "{\"desc\": \"游客在古色古香的街道中漫步\", \"category\": \"游客人群\"}"
+        },
+        {
+          "file": "old-town/old-town-03.jpg",
+          "desc": "木质警示牌提醒保护环境",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "{\"desc\": \"木质警示牌提醒保护环境\", \"category\": \"路牌标牌\"}"
+        },
+        {
+          "file": "receipt/receipt-01.jpg",
+          "desc": "粉色车票票据",
+          "category": "车票票据",
+          "hit": true,
+          "raw": "{\"desc\": \"粉色车票票据\", \"category\": \"车票票据\"}"
+        },
+        {
+          "file": "receipt/receipt-02.jpg",
+          "desc": "车票票据显示行程与座位信息",
+          "category": "车票票据",
+          "hit": true,
+          "raw": "{\"desc\": \"车票票据显示行程与座位信息\", \"category\": \"车票票据\"}"
+        },
+        {
+          "file": "receipt/receipt-03.jpg",
+          "desc": "购票信息单与车票票据",
+          "category": "车票票据",
+          "hit": true,
+          "raw": "{\"desc\": \"购票信息单与车票票据\", \"category\": \"车票票据\"}"
+        },
+        {
+          "file": "sign/sign-01.jpg",
+          "desc": "现代高楼与路牌",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "{\"desc\": \"现代高楼与路牌\", \"category\": \"路牌标牌\"}"
+        },
+        {
+          "file": "sign/sign-02.jpg",
+          "desc": "蓝色路牌显示北京路与广卫路交汇处",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "{\"desc\": \"蓝色路牌显示北京路与广卫路交汇处\", \"category\": \"路牌标牌\"}"
+        },
+        {
+          "file": "sign/sign-03.jpg",
+          "desc": "蓝色路牌显示人民北路",
+          "category": "路牌标牌",
+          "hit": true,
+          "raw": "{\"desc\": \"蓝色路牌显示人民北路\", \"category\": \"路牌标牌\"}"
+        },
+        {
+          "file": "tourists/tourists-01.jpg",
+          "desc": "游客在长城上合影",
+          "category": "游客人群",
+          "hit": true,
+          "raw": "{\"desc\": \"游客在长城上合影\", \"category\": \"游客人群\"}"
+        },
+        {
+          "file": "tourists/tourists-02.jpg",
+          "desc": "游客在岩洞前游览，岩壁上有佛像雕刻。",
+          "category": "景区导览图",
+          "hit": false,
+          "raw": "{\"desc\": \"游客在岩洞前游览，岩壁上有佛像雕刻。\", \"category\": \"景区导览图\"}"
+        },
+        {
+          "file": "tourists/tourists-03.jpg",
+          "desc": "人群聚集在古长城上",
+          "category": "游客人群",
+          "hit": true,
+          "raw": "{\"desc\": \"人群聚集在古长城上\", \"category\": \"游客人群\"}"
+        }
+      ]
+    }
+  ]
+}

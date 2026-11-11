@@ -13,7 +13,11 @@
     "checker:postprocess": "uv run --with opencv-python --with pillow --with numpy scripts/assets/checker-bg-postprocess.py",
     "vlm:smoke": "uv run --with torch --with torchvision --with transformers==4.52.4 --with pillow --with timm --with einops --with pyvips --with pyvips-binary --with accelerate --with qwen-vl-utils --with num2words scripts/assets/vlm-smoke-test.py",
     "sam2:mask": "uv run --with torch --with torchvision --with transformers==4.56.2 --with pillow --with numpy scripts/assets/sam2-mask-test.py",
-    "opencv:components": "uv run --with opencv-python --with pillow --with numpy scripts/assets/opencv-components-test.py"
+    "opencv:components": "uv run --with opencv-python --with pillow --with numpy scripts/assets/opencv-components-test.py",
+    "vision:samples": "python3 scripts/vision/fetch-commons-samples.py data/input/samples/vision",
+    "vision:apple": "swift scripts/vision/apple-vision.swift data/input/samples/vision data/reports/vision/apple-vision-samples.json",
+    "vision:clip": "HF_HUB_OFFLINE=1 uv run --with torch --with transformers --with pillow --with sentencepiece --with protobuf python scripts/vision/clip-zero-shot.py",
+    "vision:caption": "HF_HUB_OFFLINE=1 uv run --with mlx-vlm --with torch --with torchvision python scripts/vision/vlm-caption.py"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",

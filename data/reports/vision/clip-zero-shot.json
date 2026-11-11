@@ -1,0 +1,890 @@
+{
+  "device": "mps",
+  "categories": [
+    "古城街道",
+    "湖边风景",
+    "夜景",
+    "菜品美食",
+    "菜单价目表",
+    "酒店房间",
+    "景区导览图",
+    "车票票据",
+    "路牌标牌",
+    "游客人群"
+  ],
+  "runs": [
+    {
+      "name": "Chinese-CLIP 中文",
+      "prompts": [
+        "一张古城街道的照片",
+        "一张湖边风景的照片",
+        "一张夜景的照片",
+        "一张菜品美食的照片",
+        "一张菜单价目表的照片",
+        "一张酒店房间的照片",
+        "一张景区导览图的照片",
+        "一张车票票据的照片",
+        "一张路牌标牌的照片",
+        "一张游客人群的照片"
+      ],
+      "hits": 24,
+      "total": 30,
+      "ms": 22,
+      "load_s": 1.5,
+      "rows": [
+        {
+          "file": "food/food-01.jpg",
+          "top": [
+            "古城街道",
+            "景区导览图",
+            "夜景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "food/food-02.jpg",
+          "top": [
+            "菜品美食",
+            "菜单价目表",
+            "酒店房间"
+          ],
+          "hit": true
+        },
+        {
+          "file": "food/food-03.jpg",
+          "top": [
+            "夜景",
+            "菜单价目表",
+            "车票票据"
+          ],
+          "hit": false
+        },
+        {
+          "file": "hotel/hotel-01.jpg",
+          "top": [
+            "酒店房间",
+            "夜景",
+            "景区导览图"
+          ],
+          "hit": true
+        },
+        {
+          "file": "hotel/hotel-02.jpg",
+          "top": [
+            "酒店房间",
+            "夜景",
+            "车票票据"
+          ],
+          "hit": true
+        },
+        {
+          "file": "hotel/hotel-03.jpg",
+          "top": [
+            "酒店房间",
+            "夜景",
+            "车票票据"
+          ],
+          "hit": true
+        },
+        {
+          "file": "lake/lake-01.jpg",
+          "top": [
+            "湖边风景",
+            "夜景",
+            "古城街道"
+          ],
+          "hit": true
+        },
+        {
+          "file": "lake/lake-02.jpg",
+          "top": [
+            "游客人群",
+            "湖边风景",
+            "古城街道"
+          ],
+          "hit": true
+        },
+        {
+          "file": "lake/lake-03.jpg",
+          "top": [
+            "湖边风景",
+            "景区导览图",
+            "游客人群"
+          ],
+          "hit": true
+        },
+        {
+          "file": "map/map-01.jpg",
+          "top": [
+            "景区导览图",
+            "湖边风景",
+            "路牌标牌"
+          ],
+          "hit": true
+        },
+        {
+          "file": "map/map-02.jpg",
+          "top": [
+            "景区导览图",
+            "湖边风景",
+            "夜景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "map/map-03.jpg",
+          "top": [
+            "景区导览图",
+            "路牌标牌",
+            "夜景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "menu/menu-01.jpg",
+          "top": [
+            "菜单价目表",
+            "景区导览图",
+            "路牌标牌"
+          ],
+          "hit": true
+        },
+        {
+          "file": "menu/menu-02.jpg",
+          "top": [
+            "景区导览图",
+            "菜单价目表",
+            "车票票据"
+          ],
+          "hit": false
+        },
+        {
+          "file": "menu/menu-03.jpg",
+          "top": [
+            "景区导览图",
+            "路牌标牌",
+            "车票票据"
+          ],
+          "hit": false
+        },
+        {
+          "file": "night/night-01.jpg",
+          "top": [
+            "夜景",
+            "古城街道",
+            "酒店房间"
+          ],
+          "hit": true
+        },
+        {
+          "file": "night/night-02.jpg",
+          "top": [
+            "夜景",
+            "景区导览图",
+            "古城街道"
+          ],
+          "hit": true
+        },
+        {
+          "file": "night/night-03.jpg",
+          "top": [
+            "夜景",
+            "古城街道",
+            "景区导览图"
+          ],
+          "hit": true
+        },
+        {
+          "file": "old-town/old-town-01.jpg",
+          "top": [
+            "景区导览图",
+            "古城街道",
+            "游客人群"
+          ],
+          "hit": false
+        },
+        {
+          "file": "old-town/old-town-02.jpg",
+          "top": [
+            "游客人群",
+            "古城街道",
+            "景区导览图"
+          ],
+          "hit": true
+        },
+        {
+          "file": "old-town/old-town-03.jpg",
+          "top": [
+            "景区导览图",
+            "路牌标牌",
+            "湖边风景"
+          ],
+          "hit": false
+        },
+        {
+          "file": "receipt/receipt-01.jpg",
+          "top": [
+            "车票票据",
+            "景区导览图",
+            "夜景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "receipt/receipt-02.jpg",
+          "top": [
+            "车票票据",
+            "景区导览图",
+            "夜景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "receipt/receipt-03.jpg",
+          "top": [
+            "车票票据",
+            "景区导览图",
+            "夜景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "sign/sign-01.jpg",
+          "top": [
+            "路牌标牌",
+            "夜景",
+            "古城街道"
+          ],
+          "hit": true
+        },
+        {
+          "file": "sign/sign-02.jpg",
+          "top": [
+            "路牌标牌",
+            "古城街道",
+            "景区导览图"
+          ],
+          "hit": true
+        },
+        {
+          "file": "sign/sign-03.jpg",
+          "top": [
+            "路牌标牌",
+            "古城街道",
+            "夜景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "tourists/tourists-01.jpg",
+          "top": [
+            "游客人群",
+            "古城街道",
+            "景区导览图"
+          ],
+          "hit": true
+        },
+        {
+          "file": "tourists/tourists-02.jpg",
+          "top": [
+            "景区导览图",
+            "游客人群",
+            "夜景"
+          ],
+          "hit": false
+        },
+        {
+          "file": "tourists/tourists-03.jpg",
+          "top": [
+            "游客人群",
+            "景区导览图",
+            "古城街道"
+          ],
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "SigLIP 2 中文",
+      "prompts": [
+        "一张古城街道的照片",
+        "一张湖边风景的照片",
+        "一张夜景的照片",
+        "一张菜品美食的照片",
+        "一张菜单价目表的照片",
+        "一张酒店房间的照片",
+        "一张景区导览图的照片",
+        "一张车票票据的照片",
+        "一张路牌标牌的照片",
+        "一张游客人群的照片"
+      ],
+      "hits": 25,
+      "total": 30,
+      "ms": 28,
+      "load_s": 1.8,
+      "rows": [
+        {
+          "file": "food/food-01.jpg",
+          "top": [
+            "古城街道",
+            "菜品美食",
+            "景区导览图"
+          ],
+          "hit": true
+        },
+        {
+          "file": "food/food-02.jpg",
+          "top": [
+            "菜品美食",
+            "菜单价目表",
+            "古城街道"
+          ],
+          "hit": true
+        },
+        {
+          "file": "food/food-03.jpg",
+          "top": [
+            "菜单价目表",
+            "菜品美食",
+            "游客人群"
+          ],
+          "hit": false
+        },
+        {
+          "file": "hotel/hotel-01.jpg",
+          "top": [
+            "酒店房间",
+            "游客人群",
+            "菜单价目表"
+          ],
+          "hit": true
+        },
+        {
+          "file": "hotel/hotel-02.jpg",
+          "top": [
+            "酒店房间",
+            "游客人群",
+            "菜单价目表"
+          ],
+          "hit": true
+        },
+        {
+          "file": "hotel/hotel-03.jpg",
+          "top": [
+            "酒店房间",
+            "菜单价目表",
+            "夜景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "lake/lake-01.jpg",
+          "top": [
+            "湖边风景",
+            "游客人群",
+            "夜景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "lake/lake-02.jpg",
+          "top": [
+            "游客人群",
+            "湖边风景",
+            "古城街道"
+          ],
+          "hit": true
+        },
+        {
+          "file": "lake/lake-03.jpg",
+          "top": [
+            "湖边风景",
+            "游客人群",
+            "景区导览图"
+          ],
+          "hit": true
+        },
+        {
+          "file": "map/map-01.jpg",
+          "top": [
+            "景区导览图",
+            "古城街道",
+            "湖边风景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "map/map-02.jpg",
+          "top": [
+            "景区导览图",
+            "游客人群",
+            "古城街道"
+          ],
+          "hit": true
+        },
+        {
+          "file": "map/map-03.jpg",
+          "top": [
+            "景区导览图",
+            "古城街道",
+            "游客人群"
+          ],
+          "hit": true
+        },
+        {
+          "file": "menu/menu-01.jpg",
+          "top": [
+            "菜单价目表",
+            "菜品美食",
+            "景区导览图"
+          ],
+          "hit": true
+        },
+        {
+          "file": "menu/menu-02.jpg",
+          "top": [
+            "菜单价目表",
+            "菜品美食",
+            "古城街道"
+          ],
+          "hit": true
+        },
+        {
+          "file": "menu/menu-03.jpg",
+          "top": [
+            "菜单价目表",
+            "景区导览图",
+            "古城街道"
+          ],
+          "hit": true
+        },
+        {
+          "file": "night/night-01.jpg",
+          "top": [
+            "夜景",
+            "古城街道",
+            "湖边风景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "night/night-02.jpg",
+          "top": [
+            "古城街道",
+            "夜景",
+            "游客人群"
+          ],
+          "hit": false
+        },
+        {
+          "file": "night/night-03.jpg",
+          "top": [
+            "古城街道",
+            "夜景",
+            "湖边风景"
+          ],
+          "hit": false
+        },
+        {
+          "file": "old-town/old-town-01.jpg",
+          "top": [
+            "菜品美食",
+            "菜单价目表",
+            "古城街道"
+          ],
+          "hit": true
+        },
+        {
+          "file": "old-town/old-town-02.jpg",
+          "top": [
+            "游客人群",
+            "古城街道",
+            "景区导览图"
+          ],
+          "hit": true
+        },
+        {
+          "file": "old-town/old-town-03.jpg",
+          "top": [
+            "古城街道",
+            "景区导览图",
+            "路牌标牌"
+          ],
+          "hit": false
+        },
+        {
+          "file": "receipt/receipt-01.jpg",
+          "top": [
+            "车票票据",
+            "古城街道",
+            "夜景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "receipt/receipt-02.jpg",
+          "top": [
+            "车票票据",
+            "古城街道",
+            "夜景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "receipt/receipt-03.jpg",
+          "top": [
+            "车票票据",
+            "菜单价目表",
+            "夜景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "sign/sign-01.jpg",
+          "top": [
+            "路牌标牌",
+            "古城街道",
+            "夜景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "sign/sign-02.jpg",
+          "top": [
+            "路牌标牌",
+            "古城街道",
+            "景区导览图"
+          ],
+          "hit": true
+        },
+        {
+          "file": "sign/sign-03.jpg",
+          "top": [
+            "路牌标牌",
+            "景区导览图",
+            "车票票据"
+          ],
+          "hit": true
+        },
+        {
+          "file": "tourists/tourists-01.jpg",
+          "top": [
+            "游客人群",
+            "古城街道",
+            "景区导览图"
+          ],
+          "hit": true
+        },
+        {
+          "file": "tourists/tourists-02.jpg",
+          "top": [
+            "景区导览图",
+            "游客人群",
+            "古城街道"
+          ],
+          "hit": false
+        },
+        {
+          "file": "tourists/tourists-03.jpg",
+          "top": [
+            "游客人群",
+            "古城街道",
+            "车票票据"
+          ],
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "SigLIP 2 英文",
+      "prompts": [
+        "a photo of an old town street",
+        "a photo of a lakeside landscape",
+        "a photo of a night scene",
+        "a photo of a dish of food",
+        "a photo of a restaurant menu with prices",
+        "a photo of a hotel room",
+        "a photo of a tourist guide map",
+        "a photo of a train ticket or receipt",
+        "a photo of a street sign",
+        "a photo of a crowd of tourists"
+      ],
+      "hits": 29,
+      "total": 30,
+      "ms": 13,
+      "load_s": 0.8,
+      "rows": [
+        {
+          "file": "food/food-01.jpg",
+          "top": [
+            "古城街道",
+            "夜景",
+            "菜单价目表"
+          ],
+          "hit": true
+        },
+        {
+          "file": "food/food-02.jpg",
+          "top": [
+            "菜品美食",
+            "菜单价目表",
+            "夜景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "food/food-03.jpg",
+          "top": [
+            "菜品美食",
+            "菜单价目表",
+            "车票票据"
+          ],
+          "hit": true
+        },
+        {
+          "file": "hotel/hotel-01.jpg",
+          "top": [
+            "酒店房间",
+            "夜景",
+            "景区导览图"
+          ],
+          "hit": true
+        },
+        {
+          "file": "hotel/hotel-02.jpg",
+          "top": [
+            "酒店房间",
+            "夜景",
+            "景区导览图"
+          ],
+          "hit": true
+        },
+        {
+          "file": "hotel/hotel-03.jpg",
+          "top": [
+            "酒店房间",
+            "夜景",
+            "菜单价目表"
+          ],
+          "hit": true
+        },
+        {
+          "file": "lake/lake-01.jpg",
+          "top": [
+            "湖边风景",
+            "夜景",
+            "游客人群"
+          ],
+          "hit": true
+        },
+        {
+          "file": "lake/lake-02.jpg",
+          "top": [
+            "游客人群",
+            "湖边风景",
+            "古城街道"
+          ],
+          "hit": true
+        },
+        {
+          "file": "lake/lake-03.jpg",
+          "top": [
+            "湖边风景",
+            "游客人群",
+            "夜景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "map/map-01.jpg",
+          "top": [
+            "景区导览图",
+            "路牌标牌",
+            "湖边风景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "map/map-02.jpg",
+          "top": [
+            "景区导览图",
+            "游客人群",
+            "湖边风景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "map/map-03.jpg",
+          "top": [
+            "景区导览图",
+            "路牌标牌",
+            "游客人群"
+          ],
+          "hit": true
+        },
+        {
+          "file": "menu/menu-01.jpg",
+          "top": [
+            "菜单价目表",
+            "景区导览图",
+            "菜品美食"
+          ],
+          "hit": true
+        },
+        {
+          "file": "menu/menu-02.jpg",
+          "top": [
+            "菜单价目表",
+            "菜品美食",
+            "景区导览图"
+          ],
+          "hit": true
+        },
+        {
+          "file": "menu/menu-03.jpg",
+          "top": [
+            "景区导览图",
+            "车票票据",
+            "菜单价目表"
+          ],
+          "hit": false
+        },
+        {
+          "file": "night/night-01.jpg",
+          "top": [
+            "夜景",
+            "古城街道",
+            "酒店房间"
+          ],
+          "hit": true
+        },
+        {
+          "file": "night/night-02.jpg",
+          "top": [
+            "夜景",
+            "古城街道",
+            "游客人群"
+          ],
+          "hit": true
+        },
+        {
+          "file": "night/night-03.jpg",
+          "top": [
+            "夜景",
+            "古城街道",
+            "游客人群"
+          ],
+          "hit": true
+        },
+        {
+          "file": "old-town/old-town-01.jpg",
+          "top": [
+            "菜品美食",
+            "菜单价目表",
+            "古城街道"
+          ],
+          "hit": true
+        },
+        {
+          "file": "old-town/old-town-02.jpg",
+          "top": [
+            "游客人群",
+            "古城街道",
+            "景区导览图"
+          ],
+          "hit": true
+        },
+        {
+          "file": "old-town/old-town-03.jpg",
+          "top": [
+            "路牌标牌",
+            "景区导览图",
+            "古城街道"
+          ],
+          "hit": true
+        },
+        {
+          "file": "receipt/receipt-01.jpg",
+          "top": [
+            "车票票据",
+            "景区导览图",
+            "菜单价目表"
+          ],
+          "hit": true
+        },
+        {
+          "file": "receipt/receipt-02.jpg",
+          "top": [
+            "车票票据",
+            "景区导览图",
+            "菜单价目表"
+          ],
+          "hit": true
+        },
+        {
+          "file": "receipt/receipt-03.jpg",
+          "top": [
+            "车票票据",
+            "菜单价目表",
+            "景区导览图"
+          ],
+          "hit": true
+        },
+        {
+          "file": "sign/sign-01.jpg",
+          "top": [
+            "路牌标牌",
+            "古城街道",
+            "夜景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "sign/sign-02.jpg",
+          "top": [
+            "路牌标牌",
+            "景区导览图",
+            "古城街道"
+          ],
+          "hit": true
+        },
+        {
+          "file": "sign/sign-03.jpg",
+          "top": [
+            "路牌标牌",
+            "景区导览图",
+            "古城街道"
+          ],
+          "hit": true
+        },
+        {
+          "file": "tourists/tourists-01.jpg",
+          "top": [
+            "游客人群",
+            "景区导览图",
+            "古城街道"
+          ],
+          "hit": true
+        },
+        {
+          "file": "tourists/tourists-02.jpg",
+          "top": [
+            "游客人群",
+            "景区导览图",
+            "夜景"
+          ],
+          "hit": true
+        },
+        {
+          "file": "tourists/tourists-03.jpg",
+          "top": [
+            "游客人群",
+            "景区导览图",
+            "夜景"
+          ],
+          "hit": true
+        }
+      ]
+    }
+  ]
+}

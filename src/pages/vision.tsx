@@ -1,4 +1,3 @@
-import { Timer } from 'lucide-react'
 import { ImageGrid } from '@/components/image-grid'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
@@ -18,9 +17,7 @@ export function VisionPage() {
               <TableHead>模型</TableHead>
               <TableHead>参数</TableHead>
               <TableHead>认对</TableHead>
-              <TableHead>
-                <Timer className='size-4' />
-              </TableHead>
+              <TableHead>每张耗时</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
