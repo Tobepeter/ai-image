@@ -4,7 +4,7 @@ html {
   scrollbar-gutter: stable;
 }
 
-/* 小图放大看时保持像素边缘 */
-img[data-pixel] {
+/* 像素素材放大时保持锐利边缘 */
+.pixelated {
   image-rendering: pixelated;
 }

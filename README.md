@@ -20,20 +20,20 @@ ai-image/
 ├── external/                   # third-party source checkouts
 ├── models/                     # short-name symlink view for model weights
 ├── scripts/                    # ComfyUI 运行、素材后处理、模型冒烟脚本
-├── src/                        # 展示页（Vite + React + shadcn）
+├── src/                        # 视觉看板（Vite + React + shadcn）
 └── tests/
 ```
 
 ## 展示页
 
-把报告和生成图放在一起看，开发服务直接读本地 `data/` 和 `.temp/`，不复制物料
+给自己快速看的视觉看板：左侧固定目录，每个子页面只讲一个结论，配图和对比，不是文档站。开发服务直接读本地 `data/`，不复制物料
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-打开 http://127.0.0.1:5184 。展示目录在 `src/data/entries.ts`，报告直接渲染 `data/reports/*.md`，连续图片自动排成网格，点图看大图。生成产物不入库，新 clone 下来只有报告文字和拼图
+打开 http://127.0.0.1:5184 。子页面在 `src/pages/`，图片路径和结论在 `src/data/`，目录在 `src/app.tsx` 的 `pages`。想看什么再加一页。生成产物不入库，新 clone 下来图片是空的
 
 ## 当前入口
 
