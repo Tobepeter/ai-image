@@ -7,7 +7,7 @@ export function ThemesPage() {
   return (
     <div className='grid gap-4'>
       {themes.map(theme => (
-        <ResultCard key={theme.id} icon={theme.icon} name={theme.name} verdict={theme.verdict} issue={theme.issue}>
+        <ResultCard key={theme.id} name={theme.name} verdict={theme.verdict} issue={theme.issue}>
           <ImageGrid shots={theme.cases.map(name => themeImage(theme, name))} />
         </ResultCard>
       ))}

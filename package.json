@@ -17,7 +17,9 @@
     "vision:samples": "python3 scripts/vision/fetch-commons-samples.py data/input/samples/vision",
     "vision:apple": "swift scripts/vision/apple-vision.swift data/input/samples/vision data/reports/vision/apple-vision-samples.json",
     "vision:clip": "HF_HUB_OFFLINE=1 uv run --with torch --with transformers --with pillow --with sentencepiece --with protobuf python scripts/vision/clip-zero-shot.py",
-    "vision:caption": "HF_HUB_OFFLINE=1 uv run --with mlx-vlm --with torch --with torchvision python scripts/vision/vlm-caption.py"
+    "vision:caption": "HF_HUB_OFFLINE=1 uv run --with mlx-vlm --with torch --with torchvision python scripts/vision/vlm-caption.py",
+    "video:shots": "uv run --with scenedetect --with opencv-python-headless --with onnxruntime --with numpy python scripts/video/shots.py",
+    "video:keyframes": "HF_HUB_OFFLINE=1 uv run --with mlx-vlm --with torch --with torchvision --with sentencepiece --with protobuf python scripts/video/keyframes.py"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",

@@ -1,6 +1,6 @@
 import { ImageGrid } from '@/components/image-grid'
 import { Badge } from '@/components/ui/badge'
-import { Card, CardContent } from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { visionInput, visionRuns, visionTotal } from '@/data/vision'
@@ -9,6 +9,10 @@ import { visionInput, visionRuns, visionTotal } from '@/data/vision'
 export function VisionPage() {
   return (
     <Card>
+      <CardHeader>
+        <CardTitle>同一张五道具图，认对几个</CardTitle>
+        <CardDescription>鼠标停在模型名上看原始回答</CardDescription>
+      </CardHeader>
       <CardContent className='grid items-start gap-6 lg:grid-cols-[320px_minmax(0,1fr)]'>
         <ImageGrid shots={[visionInput]} fit='contain' className='grid-cols-1' />
         <Table>

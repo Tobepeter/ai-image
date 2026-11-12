@@ -7,7 +7,7 @@ export function PixelPage() {
   return (
     <div className='grid gap-4'>
       {pixelSuites.map(suite => (
-        <ResultCard key={suite.id} icon={suite.icon} name={suite.name} verdict={suite.verdict} issue={suite.issue}>
+        <ResultCard key={suite.id} name={suite.name} verdict={suite.verdict} issue={suite.issue}>
           <ImageGrid shots={suite.items} fit='contain' pixel />
         </ResultCard>
       ))}

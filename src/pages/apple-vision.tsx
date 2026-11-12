@@ -1,7 +1,6 @@
-import { FileText, Image, ScanFace, Sparkles } from 'lucide-react'
 import { ImageFrame } from '@/components/common/image-frame/image-frame'
-import { Badge } from '@/components/ui/badge'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Item, ItemContent, ItemDescription, ItemHeader, ItemTitle } from '@/components/ui/item'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { VerdictIcon } from '@/components/verdict-icon'
 import { appleVisionChecks, visionSampleRoot, visionSamples, type VisionSample } from '@/data/apple-vision'
@@ -17,27 +16,26 @@ export function AppleVisionPage() {
     <div className='grid gap-4'>
       {/* 能力一览 */}
       <Card>
+        <CardHeader>
+          <CardTitle>能力一览</CardTitle>
+          <CardDescription>30 张 Commons 旅游样本，耗时是单张平均</CardDescription>
+        </CardHeader>
         <CardContent>
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className='w-40'>能力</TableHead>
+                <TableHead>能力</TableHead>
                 <TableHead>效果</TableHead>
-                <TableHead className='w-24'>每张耗时</TableHead>
-                <TableHead className='w-20'>评价</TableHead>
+                <TableHead>每张耗时</TableHead>
+                <TableHead>评价</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {appleVisionChecks.map(check => (
                 <TableRow key={check.name}>
-                  <TableCell className='font-medium'>
-                    <div className='flex items-center gap-2'>
-                      <check.icon className='size-4' />
-                      {check.name}
-                    </div>
-                  </TableCell>
+                  <TableCell className='font-medium'>{check.name}</TableCell>
                   <TableCell>{check.note}</TableCell>
-                  <TableCell className='text-muted-foreground tabular-nums'>{check.ms}ms</TableCell>
+                  <TableCell>{check.ms}ms</TableCell>
                   <TableCell>
                     <VerdictIcon verdict={check.verdict} />
                   </TableCell>
@@ -48,14 +46,14 @@ export function AppleVisionPage() {
         </CardContent>
       </Card>
 
-      <SampleSection icon={FileText} title='文字图 → OCR' samples={textual} mode='text' />
-      <SampleSection icon={Image} title='场景图 → 标签，按美学分排' samples={scenes} mode='scene' />
+      <SampleSection title='文字图 → 走 OCR' description='“文字图判断”挑出来的，下面是识别出的字数和前两行' samples={textual} mode='text' />
+      <SampleSection title='场景图 → 打标签' description='按美学分从高到低排，下面是美学分、人脸数和最具体的三个标签' samples={scenes} mode='scene' />
     </div>
   )
 }
 
-// 一组样本，点开可在组内左右切换
-function SampleSection(props: { icon: typeof Image; title: string; samples: VisionSample[]; mode: 'text' | 'scene' }) {
+// 一组样本，点图可在组内左右切换
+function SampleSection(props: { title: string; description: string; samples: VisionSample[]; mode: 'text' | 'scene' }) {
   const items = props.samples.map(sample => ({
     src: fileUrl(`${visionSampleRoot}/${sample.file}`),
     width: sample.width,
@@ -65,63 +63,37 @@ function SampleSection(props: { icon: typeof Image; title: string; samples: Visi
   return (
     <Card>
       <CardHeader>
-        <CardTitle className='flex items-center gap-2'>
-          <props.icon className='size-4' />
-          {props.title}
-        </CardTitle>
+        <CardTitle>{props.title}</CardTitle>
+        <CardDescription>{props.description}</CardDescription>
       </CardHeader>
       <CardContent className='grid grid-cols-2 gap-4 md:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8'>
         {props.samples.map((sample, index) => (
-          <div key={sample.file} className='grid content-start gap-2'>
-            <ImageFrame
-              src={items[index].src}
-              alt=''
-              width={sample.width}
-              height={sample.height}
-              fit='cover'
-              loading='lazy'
-              className='aspect-square w-full rounded-lg'
-              previewGroup={{ index, items }}
-            />
-            {props.mode === 'text' ? <TextResult sample={sample} /> : <SceneResult sample={sample} />}
-          </div>
+          <Item key={sample.file} variant='outline'>
+            <ItemHeader>
+              <ImageFrame
+                src={items[index].src}
+                alt=''
+                width={sample.width}
+                height={sample.height}
+                fit='cover'
+                loading='lazy'
+                className='aspect-square w-full rounded-md'
+                previewGroup={{ index, items }}
+              />
+            </ItemHeader>
+            <ItemContent>
+              <ItemTitle>{props.mode === 'text' ? `${sample.text.chars} 字` : sceneTitle(sample)}</ItemTitle>
+              <ItemDescription>{props.mode === 'text' ? sample.text.lines.slice(0, 2).join(' / ') : specificLabels(sample.labels, 3).join('、')}</ItemDescription>
+            </ItemContent>
+          </Item>
         ))}
       </CardContent>
     </Card>
   )
 }
 
-// OCR 结果：字数 + 前两行
-function TextResult(props: { sample: VisionSample }) {
-  const { text } = props.sample
-  return (
-    <>
-      <Badge variant='secondary'>{text.chars} 字</Badge>
-      <p className='line-clamp-2 text-sm text-muted-foreground'>{text.lines.slice(0, 2).join(' / ')}</p>
-    </>
-  )
-}
-
-// 场景结果：美学分、人脸、去掉大类后的前三个标签
-function SceneResult(props: { sample: VisionSample }) {
-  const { aesthetics, faces, labels } = props.sample
-  return (
-    <div className='flex flex-wrap gap-1'>
-      <Badge>
-        <Sparkles />
-        {aesthetics.score.toFixed(2)}
-      </Badge>
-      {faces ? (
-        <Badge variant='secondary'>
-          <ScanFace />
-          {faces}
-        </Badge>
-      ) : null}
-      {specificLabels(labels, 3).map(label => (
-        <Badge key={label} variant='outline'>
-          {label}
-        </Badge>
-      ))}
-    </div>
-  )
+// 场景图标题：美学分，有人脸再带人脸数
+function sceneTitle(sample: VisionSample) {
+  const score = `美学 ${sample.aesthetics.score.toFixed(2)}`
+  return sample.faces ? `${score} · ${sample.faces} 张脸` : score
 }

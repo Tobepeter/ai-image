@@ -1,8 +1,7 @@
-import { ThumbsUp, TriangleAlert } from 'lucide-react'
 import { ImageFrame } from '@/components/common/image-frame/image-frame'
 import { Badge } from '@/components/ui/badge'
-import { Card, CardContent } from '@/components/ui/card'
-import { Progress } from '@/components/ui/progress'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Progress, ProgressLabel } from '@/components/ui/progress'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { VerdictIcon } from '@/components/verdict-icon'
 import { batchTime, classifyRuns, classifySamples } from '@/data/classify'
@@ -17,6 +16,10 @@ export function ClassifyPage() {
     <div className='grid gap-4'>
       {/* 对比表 */}
       <Card>
+        <CardHeader>
+          <CardTitle>方法对比</CardTitle>
+          <CardDescription>同 30 张旅游图、10 个中文类别；估 200 张 = 冷启动一次 + 200 × 每张</CardDescription>
+        </CardHeader>
         <CardContent>
           <Table>
             <TableHeader>
@@ -25,7 +28,7 @@ export function ClassifyPage() {
                 <TableHead>方式</TableHead>
                 <TableHead>优点</TableHead>
                 <TableHead>问题</TableHead>
-                <TableHead className='w-56'>分对</TableHead>
+                <TableHead>分对</TableHead>
                 <TableHead>冷启动</TableHead>
                 <TableHead>每张耗时</TableHead>
                 <TableHead>估 200 张</TableHead>
@@ -39,29 +42,18 @@ export function ClassifyPage() {
                   <TableCell>
                     <Badge variant='outline'>{run.way}</Badge>
                   </TableCell>
-                  <TableCell className='whitespace-normal'>
-                    <div className='flex items-start gap-2'>
-                      <ThumbsUp className='mt-0.5 size-4 shrink-0 text-muted-foreground' />
-                      {run.pros}
-                    </div>
-                  </TableCell>
-                  <TableCell className='whitespace-normal'>
-                    <div className='flex items-start gap-2'>
-                      <TriangleAlert className='mt-0.5 size-4 shrink-0 text-muted-foreground' />
-                      {run.cons}
-                    </div>
-                  </TableCell>
+                  <TableCell className='whitespace-normal'>{run.pros}</TableCell>
+                  <TableCell className='whitespace-normal'>{run.cons}</TableCell>
                   <TableCell>
-                    <div className='flex items-center gap-3'>
-                      <Progress value={(run.hits / run.total) * 100} className='flex-1' />
-                      <span className='w-12 text-muted-foreground tabular-nums'>
+                    <Progress value={(run.hits / run.total) * 100}>
+                      <ProgressLabel>
                         {run.hits}/{run.total}
-                      </span>
-                    </div>
+                      </ProgressLabel>
+                    </Progress>
                   </TableCell>
-                  <TableCell className='text-muted-foreground tabular-nums'>{run.coldS === 'pending' ? <Badge variant='outline'>待重测</Badge> : run.coldS ? `${run.coldS}s` : '—'}</TableCell>
-                  <TableCell className='text-muted-foreground tabular-nums'>{run.ms}ms</TableCell>
-                  <TableCell className='text-muted-foreground tabular-nums'>{batchTime(run.coldS, run.ms)}</TableCell>
+                  <TableCell>{run.coldS === 'pending' ? <Badge variant='outline'>待重测</Badge> : run.coldS ? `${run.coldS}s` : '—'}</TableCell>
+                  <TableCell>{run.ms}ms</TableCell>
+                  <TableCell>{batchTime(run.coldS, run.ms)}</TableCell>
                   <TableCell>
                     <VerdictIcon verdict={run.verdict} />
                   </TableCell>
@@ -74,11 +66,15 @@ export function ClassifyPage() {
 
       {/* 横向对比：每行一张图，每列一个模型 */}
       <Card>
+        <CardHeader>
+          <CardTitle>每张图的结果</CardTitle>
+          <CardDescription>红色是分错；最后一列是 Apple Vision 自带标签，作参照</CardDescription>
+        </CardHeader>
         <CardContent>
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className='w-28'>图</TableHead>
+                <TableHead>图</TableHead>
                 <TableHead>参考</TableHead>
                 {classifyRuns.map(run => (
                   <TableHead key={run.name}>{run.name}</TableHead>

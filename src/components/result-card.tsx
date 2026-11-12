@@ -1,27 +1,15 @@
 import type { PropsWithChildren } from 'react'
-import { TriangleAlert, type LucideIcon } from 'lucide-react'
-import { Badge } from '@/components/ui/badge'
-import { Card, CardAction, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { VerdictIcon } from '@/components/verdict-icon'
 import type { Verdict } from '@/data/verdict'
 
-// 一项结果：标题带图标和评级，问题用徽标，内容放图
+// 一项结果：标题 + 评级，主要问题放说明行，内容放图
 export function ResultCard(props: PropsWithChildren<ResultCardProps>) {
-  const Icon = props.icon
-
   return (
     <Card>
       <CardHeader>
-        <CardTitle className='flex items-center gap-2'>
-          <Icon className='size-4' />
-          {props.name}
-          {props.issue ? (
-            <Badge variant='outline'>
-              <TriangleAlert />
-              {props.issue}
-            </Badge>
-          ) : null}
-        </CardTitle>
+        <CardTitle>{props.name}</CardTitle>
+        {props.issue ? <CardDescription>问题：{props.issue}</CardDescription> : null}
         <CardAction>
           <VerdictIcon verdict={props.verdict} />
         </CardAction>
@@ -32,7 +20,6 @@ export function ResultCard(props: PropsWithChildren<ResultCardProps>) {
 }
 
 export type ResultCardProps = {
-  icon: LucideIcon
   name: string
   verdict: Verdict
   issue?: string

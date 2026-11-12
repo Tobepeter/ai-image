@@ -1,11 +1,9 @@
-import { ScanEye, Scissors, WandSparkles, type LucideIcon } from 'lucide-react'
 import type { Verdict } from './verdict'
 
 // 用过的模型按用途分组，组内按推荐程度排，耗时取自 data/reports/ 和 runs/*/ 的记录，体积是本机权重大小
 export const modelGroups: ModelGroup[] = [
   {
     name: '生成',
-    icon: WandSparkles,
     models: [
       { name: 'SDXL base', task: '全部题材出图', mb: 6500, sec: 86, verdict: 'best' },
       { name: '像素 LoRA', task: '道具、图块、精灵图', mb: 218, sec: 76, verdict: 'good', issue: '叠在 SDXL 上' },
@@ -14,7 +12,6 @@ export const modelGroups: ModelGroup[] = [
   },
   {
     name: '识别',
-    icon: ScanEye,
     models: [
       { name: 'SigLIP 2', task: '旅游图分类', mb: 1500, sec: 0.013, verdict: 'best', issue: '用英文提示' },
       { name: 'Qwen3.5-2B', task: '分类 + 一句话中文', mb: 1750, sec: 0.63, verdict: 'best' },
@@ -32,7 +29,6 @@ export const modelGroups: ModelGroup[] = [
   },
   {
     name: '分割',
-    icon: Scissors,
     models: [
       { name: 'SAM2 small', task: '框选切宝箱', mb: 176, sec: 0.46, verdict: 'good', issue: '要先给框' },
       { name: 'rembg u2netp', task: '自动去背景', mb: 4.4, sec: 6.47, verdict: 'weak', issue: '边缘发灰' },
@@ -42,7 +38,6 @@ export const modelGroups: ModelGroup[] = [
 
 export type ModelGroup = {
   name: string
-  icon: LucideIcon
   models: ModelInfo[]
 }
 

@@ -1,7 +1,6 @@
-import { ThumbsUp, TriangleAlert } from 'lucide-react'
 import { ImageFrame } from '@/components/common/image-frame/image-frame'
 import { Badge } from '@/components/ui/badge'
-import { Card, CardContent } from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { VerdictIcon } from '@/components/verdict-icon'
 import { visionSampleRoot } from '@/data/apple-vision'
@@ -17,6 +16,10 @@ export function CaptionPage() {
     <div className='grid gap-4'>
       {/* 模型一览 */}
       <Card>
+        <CardHeader>
+          <CardTitle>模型对比</CardTitle>
+          <CardDescription>同 30 张旅游图，要求一句中文描述 + 从 10 个类别里选一个</CardDescription>
+        </CardHeader>
         <CardContent>
           <Table>
             <TableHeader>
@@ -37,28 +40,18 @@ export function CaptionPage() {
               {captionRuns.map(run => (
                 <TableRow key={run.name}>
                   <TableCell className='font-medium'>{run.name}</TableCell>
-                  <TableCell className='whitespace-normal'>
-                    <div className='flex items-start gap-2'>
-                      <ThumbsUp className='mt-0.5 size-4 shrink-0 text-muted-foreground' />
-                      {run.pros}
-                    </div>
-                  </TableCell>
-                  <TableCell className='whitespace-normal'>
-                    <div className='flex items-start gap-2'>
-                      <TriangleAlert className='mt-0.5 size-4 shrink-0 text-muted-foreground' />
-                      {run.cons}
-                    </div>
-                  </TableCell>
+                  <TableCell className='whitespace-normal'>{run.pros}</TableCell>
+                  <TableCell className='whitespace-normal'>{run.cons}</TableCell>
                   <TableCell>
                     <Badge variant={run.hits === run.total ? 'default' : 'secondary'}>
                       {run.hits}/{run.total}
                     </Badge>
                   </TableCell>
-                  <TableCell className='text-muted-foreground tabular-nums'>{run.chars} 字</TableCell>
-                  <TableCell className='text-muted-foreground tabular-nums'>{run.size}</TableCell>
-                  <TableCell className='text-muted-foreground tabular-nums'>{run.coldS === 'pending' ? <Badge variant='outline'>待重测</Badge> : run.coldS ? `${run.coldS}s` : '—'}</TableCell>
-                  <TableCell className='text-muted-foreground tabular-nums'>{run.ms}ms</TableCell>
-                  <TableCell className='text-muted-foreground tabular-nums'>{batchTime(run.coldS, run.ms)}</TableCell>
+                  <TableCell>{run.chars} 字</TableCell>
+                  <TableCell>{run.size}</TableCell>
+                  <TableCell>{run.coldS === 'pending' ? <Badge variant='outline'>待重测</Badge> : run.coldS ? `${run.coldS}s` : '—'}</TableCell>
+                  <TableCell>{run.ms}ms</TableCell>
+                  <TableCell>{batchTime(run.coldS, run.ms)}</TableCell>
                   <TableCell>
                     <VerdictIcon verdict={run.verdict} />
                   </TableCell>
@@ -71,11 +64,15 @@ export function CaptionPage() {
 
       {/* 横向对比：每行一张图，每列一个模型的描述 */}
       <Card>
+        <CardHeader>
+          <CardTitle>每张图的结果</CardTitle>
+          <CardDescription>红色是类别分错或没给</CardDescription>
+        </CardHeader>
         <CardContent>
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className='w-28'>图</TableHead>
+                <TableHead>图</TableHead>
                 <TableHead>参考</TableHead>
                 {captionRuns.map(run => (
                   <TableHead key={run.name}>{run.name}</TableHead>
